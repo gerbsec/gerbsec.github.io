@@ -16,10 +16,10 @@ entries:
 
   - title: Blogs
     post_list:
-      category: blogs
+      category: blog
       show_more: true
       show_more_text: 
-      show_more_url: writeup-archive.html
+      show_more_url: blog-archive.html
 
   - title: Writeups
     post_list:
