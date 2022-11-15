@@ -19,11 +19,11 @@ entries:
       category: blog
       show_more: true
       show_more_text: 
-      show_more_url: blog-archive.html
+      show_more_url: blog-archive
 
   - title: writeups
     post_list:
       category: writeup
       show_more: true
       show_more_text: 
-      show_more_url: writeup-archive.html
+      show_more_url: writeup-archive

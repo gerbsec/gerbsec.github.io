@@ -68,8 +68,10 @@ table, th, td {
 }
 
 code {
+  display: inline-block;
+  border-radius:2px;
   color: black;
-  background: rgb(18, 10, 90);
+  background: burlywood;
 }
 
 div.highlighter-rouge code {
