@@ -4,8 +4,8 @@ entries:
       - title: Waseem Albaba 
         entries: 
         - title: Security Engineer
-        url: https://github.com/gerbsec
-      - title: 
+        - title:  <a href='https://github.com/gerbsec'>Github</a>; <a href='https://twitter.com/gerbsec'>Twitter</a>"
+
 
   - title: all posts
     post_list:
@@ -16,14 +16,11 @@ entries:
 
   - title: posts by category
     post_list:
-      category: example2
+      category: Writeup
       show_more: true
-      show_more_text: See more posts...
+      show_more_text: 
       show_more_url: example2-archive.html
 
-  - title: rss
-    url: feed.xml
-  
   - title: another list
     entries:
       - title: with subitems
@@ -31,6 +28,3 @@ entries:
           - title: with subsubitems
           - title: example page
             url: about
-  - title: PRO TIP
-    entries:
-      - title: to edit this menu, edit _data/menu.yml file
