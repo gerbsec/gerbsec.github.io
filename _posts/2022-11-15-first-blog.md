@@ -3,7 +3,6 @@ layout: post
 category: blog
 ---
 
-# first blog
 
 - Code test
 
