@@ -16,7 +16,7 @@ entries:
 
   - title: posts by category
     post_list:
-      category: Writeup
+      category: writeup
       show_more: true
       show_more_text: 
       show_more_url: example2-archive.html
