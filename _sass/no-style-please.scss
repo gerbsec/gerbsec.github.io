@@ -75,7 +75,8 @@ code {
 }
 
 div.highlighter-rouge code {
-  display: block;
+  display: inline-block;
+  border-radius:2px;
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
