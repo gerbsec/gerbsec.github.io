@@ -1,10 +1,10 @@
 entries:
-  - title: whoami
+  - title: $ whoami
     entries:
-      - title: Waseem Albaba 
+      - title: waseem albaba 
         entries: 
-        - title: Security Engineer
-        - title:  <a href='https://github.com/gerbsec'>Github</a> && <a href='https://twitter.com/gerbsec'>Twitter</a>
+        - title: security engineer
+        - title:  <a href='https://github.com/gerbsec'>github</a> && <a href='https://twitter.com/gerbsec'>twitter</a>
 
 
   - title: all posts
@@ -14,14 +14,14 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: Blogs
+  - title: blogs
     post_list:
       category: blog
       show_more: true
       show_more_text: 
       show_more_url: blog-archive.html
 
-  - title: Writeups
+  - title: writeups
     post_list:
       category: writeup
       show_more: true
