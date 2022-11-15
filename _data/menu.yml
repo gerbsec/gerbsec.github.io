@@ -4,7 +4,7 @@ entries:
       - title: Waseem Albaba 
         entries: 
         - title: Security Engineer
-        - title:  <a href='https://github.com/gerbsec'>Github</a>; <a href='https://twitter.com/gerbsec'>Twitter</a>
+        - title:  <a href='https://github.com/gerbsec'>Github</a> && <a href='https://twitter.com/gerbsec'>Twitter</a>
 
 
   - title: all posts
@@ -14,17 +14,16 @@ entries:
       show_more_text: See archive...
       show_more_url: archive.html
 
-  - title: posts by category
+  - title: Blogs
+    post_list:
+      category: blogs
+      show_more: true
+      show_more_text: 
+      show_more_url: writeup-archive.html
+
+  - title: Writeups
     post_list:
       category: writeup
       show_more: true
       show_more_text: 
-      show_more_url: example2-archive.html
-
-  - title: another list
-    entries:
-      - title: with subitems
-        entries:
-          - title: with subsubitems
-          - title: example page
-            url: about
+      show_more_url: writeup-archive.html
