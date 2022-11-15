@@ -71,12 +71,12 @@ code {
   display: inline-block;
   border-radius:2px;
   color: black;
-  background: burlywood;
+  background: magenta;
 }
 
 div.highlighter-rouge code {
-  display: inline-block;
-  border-radius:2px;
+  display: block;
+  border-radius:20px;
   overflow-x: auto;
   white-space: pre-wrap;
   padding: 1rem;
