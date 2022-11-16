@@ -16,14 +16,16 @@ entries:
 
   - title: blogs
     post_list:
+      limit: 2
       category: blog
       show_more: true
-      show_more_text: 
+      show_more_text: show more..
       show_more_url: blog-archive
 
   - title: writeups
     post_list:
+      limit: 2
       category: writeup
       show_more: true
-      show_more_text: 
+      show_more_text: show more..
       show_more_url: writeup-archive
