@@ -26,7 +26,7 @@ since i'm not president anymore i'm going to be more myself, if you have a feeli
 i might go full time, and focus on work so i can save a few bucks. i might dual enroll with ucf (not a joke) and play on their team. maybe just apply for a masters.
 these things are just thoughts at this point but I can def see them become reality. i've sacrificed a lot of for this club with little to no gain on my end. 
 
-i think abir is reading this so hi
+i think abir and jay are reading this so hi
 
 ## final thoughts
 
