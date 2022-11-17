@@ -31,3 +31,5 @@ i think abir is reading this so hi
 ## final thoughts
 
 regardless of what anyone thinks of me, they would have 0 thoughts about me if i didn't do what i did. i pulled this club from the lowest shithole and saved it. i put us back on the map with a proper work ethic and drive to win. there is absolutely no denying it.
+
+best, gerbsec
