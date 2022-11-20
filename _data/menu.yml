@@ -19,7 +19,7 @@ entries:
       limit: 0
       category: blog
       show_more: true
-      show_more_text: show more..
+      show_more_text: view all blogs..
       show_more_url: blog-archive
 
   - title: writeups
@@ -27,5 +27,5 @@ entries:
       limit: 0
       category: writeup
       show_more: true
-      show_more_text: show more..
+      show_more_text: view all writeups..
       show_more_url: writeup-archive
