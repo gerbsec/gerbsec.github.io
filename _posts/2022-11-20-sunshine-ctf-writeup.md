@@ -9,7 +9,7 @@ category: writeup
 
 ### network pong
 
-this challenge was interesting since i had just refreshed my knowledge on the topic it felt easy. i't s class command injection vulnerability except
+this challenge was interesting. since i had just refreshed my knowledge on the topic it felt easy. it's a classic command injection vulnerability except
 they are using command expansion. 
 
 `
@@ -22,6 +22,8 @@ i figured that out by entering a semicolon
 ![](assets/images/expansion.png)
 
 then i entered a whoami command
+
+`0.0.0.0$(whoami)`
 
 ![](assets/images/whoami.png)
 
