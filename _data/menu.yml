@@ -7,7 +7,7 @@ entries:
         - title:  <a href='https://github.com/gerbsec'>github</a> && <a href='https://twitter.com/gerbsec'>twitter</a>
 
 
-  - title: all posts
+  - title: recent posts
     post_list:
       limit: 5
       show_more: true
@@ -16,7 +16,7 @@ entries:
 
   - title: blogs
     post_list:
-      limit: 2
+      limit: 0
       category: blog
       show_more: true
       show_more_text: show more..
@@ -24,7 +24,7 @@ entries:
 
   - title: writeups
     post_list:
-      limit: 2
+      limit: 0
       category: writeup
       show_more: true
       show_more_text: show more..
