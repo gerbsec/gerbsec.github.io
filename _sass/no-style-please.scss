@@ -75,8 +75,10 @@ table, th, td {
 }
 
 code {
+  display: block;
+  border-radius:15px;
   color: white;
-  background: rgb(102, 3, 102);
+  background: grey;
 }
 
 div.highlighter-rouge code {
