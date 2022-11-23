@@ -394,7 +394,7 @@ namespace decryptor
 
 running it results in a decrypted file and the flag:
 
-![](assets/images/htb-ctf-usf-unfinished-business.png)
+![](assets/images/htb-ctf-usf-unfinshed-business.png)
 
 - flag: `HTB{4n0the3r_0n3_T4nn3n_d3f34t3d}`
 
