@@ -396,5 +396,19 @@ running it results in a decrypted file and the flag:
 
 ![](assets/images/htb-ctf-usf-unfinished-business.png)
 
-- flag: HTB{4n0the3r_0n3_T4nn3n_d3f34t3d}
+- flag: `HTB{4n0the3r_0n3_T4nn3n_d3f34t3d}`
 
+
+### Heatflow 
+
+#### The flux capacitor v2.0 requires even more jigowatts to run stably! To properly dissipate the excessive amount of heat produced by the new prototype we have gathered the required data to design an adequate cooling system by measuring the temperature across five key parts of the circuit board every minute. Can you help us analyze the data?
+
+- i hated this one
+- horrible
+- it sucks
+
+- To begin, we are handed a.csv file and informed that the numbers in it are inconsistent. I opened it in Excel and calculated the mean of all the data. I used conditional formatting to find outliers and quickly recognized items that looked like words when I highlighted all the ones that were above average. I changed it to below average and presto:
+
+![](assets/images/htb-ctf-usf-excel.png)
+
+- flag `HTB{M0R3_P0W3R_M0R3_HE4T}`
