@@ -4,8 +4,6 @@ category: writeup
 ---
 
 
-
-
 ![](assets/images/sunshinectf22.png)
 
 
