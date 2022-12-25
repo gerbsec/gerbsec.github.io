@@ -412,3 +412,8 @@ running it results in a decrypted file and the flag:
 ![](assets/images/htb-ctf-usf-excel.png)
 
 - flag `HTB{M0R3_P0W3R_M0R3_HE4T}`
+
+
+that's all.
+
+best, gerbsec

