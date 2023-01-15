@@ -6,7 +6,7 @@ category: writeup
 
 - doctor is an easy box from HTB
 - vulnerable SSTI to RCE
-- outdated splunkforwarder
+- outdated splunk forwarder
 - unintended RCE in content field
 
 
@@ -15,7 +15,7 @@ category: writeup
 [![Doctor](https://img.youtube.com/vi/uxbwCMNQ2WA/0.jpg)](https://www.youtube.com/watch?v=uxbwCMNQ2WA "Doctor Walkthrough")
 
 
-- as far as the uninteded path since i don't complete it i will explain it here:
+- as far as the unintended path since i don't complete it i will explain it here:
 
 first you will need to curl in a bash  payload and save to `/var/www/html`. next you will need to run it, so the payloads should look something like this:
 

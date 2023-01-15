@@ -9,7 +9,7 @@ category: writeup
 
 - sunshine CTF was fun! we were in person and unfortunately had no internet what so ever. 
 - that caused me to not put as much effort as i normally would have.
-- nevertheless i got some challeneges done and here are their writeups!
+- nevertheless i got some challenges done and here are their writeups!
 
 ### network pong
 
