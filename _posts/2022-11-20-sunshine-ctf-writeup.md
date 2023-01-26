@@ -1,6 +1,7 @@
 ---
 layout: post
 category: writeup
+custom_js: highlight
 ---
 
 
