@@ -19,7 +19,7 @@ category: writeup
 - this challenge was quite easy as there wasn't much to attack
 - we were faced with a singular input that seems like it maps to `utils.py` in the provided files:
 
-```
+```python
 import subprocess, os
 from application import main
 
