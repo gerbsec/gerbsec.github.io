@@ -14,14 +14,6 @@ entries:
       show_more_text: See archive...
       show_more_url: archive
 
-  - title: blogs
-    post_list:
-      limit: 0
-      category: blog
-      show_more: true
-      show_more_text: view all blogs..
-      show_more_url: blog-archive
-
   - title: writeups
     post_list:
       limit: 0
@@ -29,3 +21,19 @@ entries:
       show_more: true
       show_more_text: view all writeups..
       show_more_url: writeup-archive
+
+  - title: cheatsheets
+    post_list:
+      limit: 0
+      category: cheatsheets
+      show_more: true
+      show_more_text: view all cheat sheets..
+      show_more_url: cheatsheets-archive
+
+  - title: blogs
+    post_list:
+      limit: 0
+      category: blog
+      show_more: true
+      show_more_text: view all blogs..
+      show_more_url: blog-archive
