@@ -68,7 +68,7 @@ this was a reversing challenge that was pretty easy generally.
 
 it starts off with a upx packed binary that needed to be unpacked:
 
-```
+```bash
 gerbsec@illusion:~$ strings plumber_game | grep upx
 $Info: This file is packed with the UPX executable packer http://upx.sf.net 
 ```
