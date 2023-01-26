@@ -1,7 +1,6 @@
 ---
 layout: post
 category: writeup
-custom_js: highlight
 ---
 
 
@@ -75,7 +74,7 @@ $Info: This file is packed with the UPX executable packer http://upx.sf.net
 
 so i unpacked it with upx
 
-```
+```bash
 gerbsec@illusion:~/chall/upx-4.0.1-amd64_linux$ ./upx -d ../plumber_game 
                        Ultimate Packer for eXecutables
                           Copyright (C) 1996 - 2022
@@ -92,7 +91,7 @@ looking at strings, it looks like go, so i sent it into gdb
 
 i run `disass main.main` and i see an interesting `runtime.memequal` soon after a `ScanIn` i suspect this is the string being compared to with the password.
 
-```
+```C
    0x000000000048edb1 <+257>:   mov    QWORD PTR [rsp+0x10],rax
    0x000000000048edb6 <+262>:   mov    QWORD PTR [rsp],rcx
    0x000000000048edba <+266>:   lea    rax,[rip+0x33050]        # 0x4c1e11
@@ -107,20 +106,20 @@ i add a bp at `*main.main+278`, i run and enter 16 chrs for the password since i
 
 looking at the output I see what could possibly be a string:
 
-```
+```C
 0xc420047d40 —▸ 0x4c1e11 (string.*+6241) ◂— 0x36325f3172347440 ('@t4r1_26')
 ```
 
 i inspect that address
 
-```
+```C
 pwndbg> x/s 0x4c1e11
 0x4c1e11:       "@t4r1_2600_l0v3rGC worker (idle)Imperial_AramaicMSpanList_InsertMSpanList_RemoveMeroitic_CursiveOther_AlphabeticSIGNONE: no trapZanabazar_Square\nruntime stack:\nbad frame layoutbad special kindbad symb"...
 ```
 
 i see the password `@t4r1_2600_l0v3r` and use it when running the binary:
 
-```
+```bash
 gerbsec@illusion:~/chall$ ./plumber_game 
 Please enter your password below:
 @t4r1_2600_l0v3r
