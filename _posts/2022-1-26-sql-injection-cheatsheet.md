@@ -52,6 +52,7 @@ category: cheatsheets
 * OR (```||```)
 
 ## [SQL Injection](#sql-injection)
+
 | **Payload** | **Description**   |
 | ------------|-------------------|
 <!-- | **Auth Bypass** |
