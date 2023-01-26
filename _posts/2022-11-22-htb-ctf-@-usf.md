@@ -19,7 +19,7 @@ category: writeup
 - this challenge was quite easy as there wasn't much to attack
 - we were faced with a singular input that seems like it maps to `utils.py` in the provided files:
 
-{% highlight python %}
+```python
 import subprocess, os
 from application import main
 
@@ -32,7 +32,7 @@ def format_date(timestr):
     except:
         formatDate = 'Jan 01 1970 00 00'
     return formatDate
-{% endhighlight %}
+```
 
 - that is an obvious command injection
 - i search other files and i don't see any sanitization so i can input something like this
