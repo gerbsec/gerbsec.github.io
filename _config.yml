@@ -25,3 +25,8 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable : true
