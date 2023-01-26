@@ -52,8 +52,8 @@ category: cheatsheets
 * OR (```||```)
 
 ## [SQL Injection](#sql-injection)
-| **Payload**   | **Description**   |
-| --------------|-------------------|
+| **Payload** | **Description**   |
+| ------------|-------------------|
 | **Auth Bypass** |
 | ```admin' or '1'='1``` | Basic Auth Bypass |
 | ```admin')-- -``` | Basic Auth Bypass With comments |
