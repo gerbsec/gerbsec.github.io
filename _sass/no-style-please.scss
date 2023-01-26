@@ -1,8 +1,8 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
-  filter: invert(1);
+  filter: invert(0);
   img {
-    filter: invert(1);
+    filter: invert(0);
 
     &.ioda { filter: invert(0); }
   }
@@ -19,12 +19,12 @@ body[a="dark"] { @include dark-appearance; }
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
-html, body { background: white; }
+html, body { background: black; }
 
 html { height: 100%; }
 
 body {
-  color: black;
+  color: white;
   font-family: monospace;
   font-size: 16px;
   line-height: 1.4;
@@ -45,11 +45,16 @@ li { margin: 0.4rem 0; }
 
 *:target { background: green; }
 
+// a:link{
+//   color: rgb(120, 15, 120);
+// }
+
 a:link{
-  color: rgb(120, 15, 120);
+  color: green;
 }
+
 a:visited{
-  color: rgb(120,15, 120);
+  color: green;
 }
 
 .w {
@@ -69,14 +74,14 @@ hr {
 table { width: 100%; }
 
 table, th, td {
-  border: thin solid black;
+  border: thin solid white;
   border-collapse: collapse;
   padding: 0.4rem;
 }
 
 blockquote {
   font-style: italic;
-  border: thin solid black;
+  border: thin solid white;
   padding: 1rem;
 
   p { margin: 0; }
