@@ -1,18 +1,18 @@
 // -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(0);
+@mixin light-appearance {
+  filter: invert(1);
   img {
-    filter: invert(0);
+    filter: invert(1);
 
     &.ioda { filter: invert(0); }
   }
 }
 
-body[a="dark"] { @include dark-appearance; }
+body[a="light"] { @include light-appearance; }
 
 
-@media (prefers-color-scheme: dark) {
-  body[a="dark"] { @include dark-appearance; }
+@media (prefers-color-scheme: light) {
+  body[a="light"] { @include light-appearance; }
 }
 // -------------------------------------------- //
 
@@ -45,16 +45,12 @@ li { margin: 0.4rem 0; }
 
 *:target { background: green; }
 
-// a:link{
-//   color: rgb(120, 15, 120);
-// }
-
 a:link{
-  color: green;
+  color: rgb(135, 240, 135);
 }
 
 a:visited{
-  color: green;
+  color: rgb(135, 240, 135);
 }
 
 .w {
