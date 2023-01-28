@@ -3,10 +3,7 @@ layout: post
 category: writeup
 ---
 
-## Under Construction
-
 ### difficulty: medium
-
 ### description
 
 ```
@@ -86,7 +83,7 @@ module.exports = {
 ```
 
 - this one does some interesting things with privatekeys and publickeys.
-- the vulnerability here is that the server is accepting an HMAC256 verification when it used RSA256 to sign. I can use the public key that I have and the tool called RSAtoHMAC to resign my own payloads.
+- the vulnerability here is that the server is accepting an HMAC256 verification when it used RSA256 to sign. I can use the public key that I have and the tool called [RSAtoHMAC](https://github.com/cyberblackhole/TokenBreaker/blob/master/RsaToHmac.py) to re-sign my own payloads.
 - registering an admin:admin account and decoding the jwt token:
 
 ```json
@@ -97,7 +94,7 @@ module.exports = {
 }
 ```
 
-- I now save the public key to a file and follow the ![RSAtoHMAC.py](https://github.com/cyberblackhole/TokenBreaker) script:
+- I now save the public key to a file and follow the [tokenbreaker](https://github.com/cyberblackhole/TokenBreaker) script:
 
 ![](assets/images/htb-under-construction-jwt.png)
 
@@ -151,5 +148,8 @@ g_storage'-- -", "pk":"-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCA
 ```
 
 ![](assets/images/htb-under-construction-flag.png)
+
+
+- overall a fun challenge, made some false assumptions regarding the DB but other than that, simple and to the point. 
 
 best, gerbsec
