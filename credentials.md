@@ -1,10 +1,7 @@
 ---
-layout: archive
-which_category: credentials
+layout: page
 title: Credentials
 ---
-
-
 
 ### Table of Contents
 
@@ -14,14 +11,13 @@ title: Credentials
     - [CompTIA Security Plus](#Security-plus)
 
 
+## Certifications
 
-# [Certifications](#certs)
-
-## [Offensive Security Certified Professional](#OSCP)
+## Offensive Security Certified Professional
 
 ![](assets/images/oscp.png)
 
-## [Hack The Box Certified Bug Bounty Hunter](#CBBH)
+## Hack The Box Certified Bug Bounty Hunter
 
 ![](assets/images/CBBH.png)
 
