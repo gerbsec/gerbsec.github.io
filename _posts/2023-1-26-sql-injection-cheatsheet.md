@@ -11,11 +11,12 @@ category: cheatsheets
     - [SQL Injection](#sql-injection)
 
 
-## [MySQL](#mysql)
+## MySQL
+
+## General Commands
 
 | **Command**   | **Description**   |
 | --------------|-------------------|
-| [**General Commands**](#general-commands) |
 | ```mysql -u root -h server -P 3306 -p``` | login to mysql database |
 | ```SHOW DATABASES``` | List available databases |
 | ```USE users``` | Switch to database |
@@ -43,7 +44,7 @@ category: cheatsheets
 | ```SELECT * FROM table_name WHERE <condition>``` | List results that meet a condition |
 | ```SELECT * FROM logins WHERE username LIKE 'admin%'``` | List results where the name is similar to a given string |
 
-## [MySQL Operator Precedence](#mysql-operator-precedence)
+## MySQL Operator Precedence
 * Division (```/```), Multiplication (```*```), and Modulus (```%```)
 * Addition (```+```) and Subtraction (```-```)
 * Comparison (```=```, ```>```, ```<```, ```<=```, ```>=```, ```!=```, ```LIKE```)
@@ -51,7 +52,7 @@ category: cheatsheets
 * AND (```&&```)
 * OR (```||```)
 
-## [SQL Injection](#sql-injection)
+## SQL Injection
 
 | **Payload** | **Description**   |
 | ------------|-------------------|
