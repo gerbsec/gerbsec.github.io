@@ -5,7 +5,7 @@ entries:
         entries: 
         - title: security engineer
         - title:  <a href='https://github.com/gerbsec'>github</a> && <a href='https://twitter.com/gerbsec'>twitter</a> && <a href='https://app.hackthebox.com/users/357009'>hackthebox</a>
-
+          - title: [credentials](./credentials)
 
   - title: recent posts
     post_list:
