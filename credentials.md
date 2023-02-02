@@ -5,13 +5,12 @@ title: Credentials
 
 ### Table of Contents
 
-- [Certifications](#certs)
-    - [Offensive Security Certified Professional](#OSCP) - OSCP
-    - [Hack The Box Certified Bug Bounty Hunter](#CBBH) - CBBH
-    - [CompTIA Security Plus](#Security-plus)
+- [Certifications](#certifications)
+    - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
+    - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
+    - [CompTIA Security Plus](#comptia-security-plus)
 
-
-## Certifications
+# Certifications
 
 ## Offensive Security Certified Professional
 
