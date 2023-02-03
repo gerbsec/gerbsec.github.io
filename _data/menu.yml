@@ -3,9 +3,9 @@ entries:
     entries:
       - title: waseem albaba 
         entries: 
-        - title: security engineer
-        - title: <a href='https://github.com/gerbsec'>github</a> && <a href='https://twitter.com/gerbsec'>twitter</a> && <a href='https://app.hackthebox.com/users/357009'>hackthebox</a>
-        - title: <a href='./credentials'>credentials</a>
+        - title: adversarial security engineer
+        - title: <a href='./certifications'>certifications && qualifications</a>
+        - title: <a href='https://github.com/gerbsec'>github</a> && <a href='https://twitter.com/gerbsec'>twitter</a> && <a href='https://www.linkedin.com/in/waseem-albaba-6a361b1b9/'>linkedin</a>
 
   - title: recent posts
     post_list:
