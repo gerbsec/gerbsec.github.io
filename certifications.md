@@ -6,6 +6,7 @@ title: Certifications
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
+- [Hack The Box Genesis Pro Lab](#hack-the-box-genesis-pro-lab)
 - [CompTIA Security Plus](#comptia-security-plus)
 
 ## Offensive Security Certified Professional
@@ -25,6 +26,15 @@ title: Certifications
 - Verify: [CBBH](https://www.credly.com/badges/cd99db08-80f8-4309-9aa2-5ab54edd47a0/public_url)
 
 ![](assets/images/CBBH.png)
+
+## Hack The Box Genesis Pro Lab
+
+### Vendor: Hack The Box
+- Date acquired: March 2023
+- Expires: Never
+- Verify: N/A
+
+![](assets/images/Genesis.png)
 
 ## CompTIA Security Plus
 
