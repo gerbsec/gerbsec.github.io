@@ -7,6 +7,7 @@ title: Certifications
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
 - [Hack The Box Genesis Pro Lab](#hack-the-box-genesis-pro-lab)
+- [Hack The Box Dante Pro Lab](#hack-the-box-dante-pro-lab)
 - [CompTIA Security Plus](#comptia-security-plus)
 
 ## Offensive Security Certified Professional
@@ -35,6 +36,15 @@ title: Certifications
 - Verify: N/A
 
 ![](assets/images/Genesis.png)
+
+## Hack The Box Dante Pro Lab
+
+### Vendor: Hack The Box
+- Date acquired: March 2023
+- Expires: Never
+- Verify: N/A
+
+![](assets/images/Dante.png)
 
 ## CompTIA Security Plus
 
