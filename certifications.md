@@ -5,10 +5,16 @@ title: Certifications
 
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
+- [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-spcialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
 - [Hack The Box Genesis Pro Lab](#hack-the-box-genesis-pro-lab)
 - [Hack The Box Dante Pro Lab](#hack-the-box-dante-pro-lab)
 - [CompTIA Security Plus](#comptia-security-plus)
+
+| offsec | comptia |
+:--------:|:-------:
+![](assets/images/oscp.png)| ![](assets/images/CPTS.png)
+test | test
 
 ## Offensive Security Certified Professional
 
@@ -18,6 +24,16 @@ title: Certifications
 - Verify: [OSCP](https://www.credential.net/aaf2c998-78c4-4714-add1-7185a3602a91)
 
 ![](assets/images/oscp.png)
+
+## Hack The Box Certified Penetration Testing Specialist
+
+### Vendor: Hack The Box
+- Date acquired: April 2023
+- Exprires: Never
+- Verify: [CPTS](https://www.credly.com/badges/fc1dae51-8b79-4c60-9f85-24dc992a7230)
+
+![](assets/images/CPTS.png)
+
 
 ## Hack The Box Certified Bug Bounty Hunter
 
