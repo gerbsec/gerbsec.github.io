@@ -11,11 +11,6 @@ title: Certifications
 - [Hack The Box Dante Pro Lab](#hack-the-box-dante-pro-lab)
 - [CompTIA Security Plus](#comptia-security-plus)
 
-| offsec | comptia |
-:--------:|:-------:
-![](assets/images/oscp.png)| ![](assets/images/CPTS.png)
-test | test
-
 ## Offensive Security Certified Professional
 
 ### Vendor: Offensive Security 
