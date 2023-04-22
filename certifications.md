@@ -7,6 +7,7 @@ title: Certifications
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-spcialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
+- [Practical Network Penetration Tester](#practical-network-penetration-tester) - PNPT
 - [Hack The Box Genesis Pro Lab](#hack-the-box-genesis-pro-lab)
 - [Hack The Box Dante Pro Lab](#hack-the-box-dante-pro-lab)
 - [CompTIA Security Plus](#comptia-security-plus)
@@ -38,6 +39,16 @@ title: Certifications
 - Verify: [CBBH](https://www.credly.com/badges/cd99db08-80f8-4309-9aa2-5ab54edd47a0/public_url)
 
 ![](assets/images/CBBH.png)
+
+## Practical Network Penetration Tester
+
+### Vendor: TCM Security 
+- Date acquired: April 2023
+- Exprires: Never
+- Verify: [PNPT](https://www.credential.net/8f673747-46f1-45b7-916e-b8bf82ffafc5)
+
+![](assets/images/PNPT.png)
+
 
 ## Hack The Box Genesis Pro Lab
 
