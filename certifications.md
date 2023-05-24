@@ -20,7 +20,7 @@ title: Certifications
 - Exprires: Never
 - Verify: [OSCP](https://www.credential.net/aaf2c998-78c4-4714-add1-7185a3602a91)
 
-![](assets/images/OSCP.png)
+![](assets/images/oscp.png)
 
 ## Certified Red Team Operator
 
