@@ -5,7 +5,7 @@ title: Certifications
 
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
-- [Certified Red Team Operator](#certified-red-team-operoator) - CRTO 
+- [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-spcialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
 - [Practical Network Penetration Tester](#practical-network-penetration-tester) - PNPT
@@ -20,7 +20,7 @@ title: Certifications
 - Exprires: Never
 - Verify: [OSCP](https://www.credential.net/aaf2c998-78c4-4714-add1-7185a3602a91)
 
-![](assets/images/oscp.png)
+![](assets/images/OSCP.png)
 
 ## Certified Red Team Operator
 
@@ -28,6 +28,8 @@ title: Certifications
 - Date acquired: May 2023
 - Expries: Never
 - Verify: [CRTO](https://eu.badgr.com/public/assertions/zMkwZ-sjQLWBDMVP6qbyZg)
+
+![](assets/images/CRTO.png)
 
 ## Hack The Box Certified Penetration Testing Specialist
 
