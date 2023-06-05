@@ -6,12 +6,13 @@ title: Certifications
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
-- [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-spcialist) - CPTS
+- [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
 - [Practical Network Penetration Tester](#practical-network-penetration-tester) - PNPT
+- [Practical Junior Penetration Tester](#practical-junior-penetration-tester) - PJPT
+- [CompTIA Security Plus](#comptia-security-plus)
 - [Hack The Box Genesis Pro Lab](#hack-the-box-genesis-pro-lab)
 - [Hack The Box Dante Pro Lab](#hack-the-box-dante-pro-lab)
-- [CompTIA Security Plus](#comptia-security-plus)
 
 ## Offensive Security Certified Professional
 
@@ -59,6 +60,23 @@ title: Certifications
 
 ![](assets/images/PNPT.png)
 
+## Practical Junior Penetration Tester
+
+### Vendor: TCM Security 
+- Date acquired: April 2023
+- Exprires: Never
+- Verify: [PJPT](https://www.credential.net/83e803b8-50f0-4b7f-b543-8e65c021b69b)
+
+![](assets/images/PJPT.png)
+
+## CompTIA Security Plus
+
+### Vendor: CompTIA
+- Date acquired: January 2023
+- Exprires: January 2026
+- Verify: [Sec+](https://www.credly.com/badges/ac9a43b9-51bd-43a8-855f-cdaa942c13ac/public_url)
+
+![](assets/images/SecPlus.png)
 
 ## Hack The Box Genesis Pro Lab
 
@@ -77,12 +95,3 @@ title: Certifications
 - Verify: N/A
 
 ![](assets/images/Dante.png)
-
-## CompTIA Security Plus
-
-### Vendor: CompTIA
-- Date acquired: January 2023
-- Exprires: January 2026
-- Verify: [Sec+](https://www.credly.com/badges/ac9a43b9-51bd-43a8-855f-cdaa942c13ac/public_url)
-
-![](assets/images/SecPlus.png)
