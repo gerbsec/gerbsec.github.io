@@ -18,6 +18,10 @@ this really focuses on honing a users skill at identifying flaws and vulnerabili
 
 the conent is absolutely amazing, it is self paced; however, you have to compelete it. you have to complete 20 modules or so at the time i took the course before being able to attempt the exam. this content is in the form of modules that have submodules that build the skillset from the ground up. this allows someone to start at a newbie level and build up to an intermediate level with any sort of vulnerability. this content is absolutely ground breaking when it comes to the current market. This cert competes with offsec and burpsuite and imo it beats out both of them. Since it doesn't have to stick to burpsuite as the main tool of compromise then it can expand out and teach a variety of techniques. It also is updated daily so you aren't stuck with a 2021 exam and course and waiting for a pdf update.
 
+## the exam
+
+7 day exam with an idk how long period for a report to write. obviously hacking websites. the goal is code exec on all the websites on the exam. its a nice environment, highly recommend. 
+
 ## who should get the cbbh
 
 anyone that is interested in web exploitation. it is a very fun course and exam and i can confidently say it changed the way i look at webapplications in general. its very very good and will take you skill wise to the next level. I don't think it will improve your resume at all though at it's current stage. this is because its not very well known to recruiters so they will probably not understand how intricate and difficult it really is. 

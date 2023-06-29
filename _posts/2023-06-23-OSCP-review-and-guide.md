@@ -22,6 +22,10 @@ the lab is a very intricate environment with multiple tiers of networks. it's ve
 
 as i said there is nearly no guidance in the lab and they recommend rooting 40-60 machines in order to be more ready to pass the exam. i personally LOVE the try harder mentality. as this was my first cert, it shaped the way i approach all of cyber security. there is no challenge that i see now and think "i can't do this." every challenge is approached with an "i can do this, just need to try hard enough" mentality. this is a very good mentality that i see a lot of people struggle with understanding or just outright disagree with. for me personally, this is my life.
 
+## the exam
+
+24 hours 3 ad 3 solo machines, 24 hours more to write a report. this is public knowledge now so i don't mind saying that. i am honestly not sure how it is on the 2023 version so don't quote me :D. focus on the ad, because you can't pass without it. finishing that means you can work on the others. 
+
 ## who should get the oscp
 
 i personally think anyone and every with a little knowledge of linux and networking and wants to enter into cyber should take. that said anyone with a ton of experience should also take it. it's a huge resume bump and you will find your self getting a ton more interviews. it is a hard exam when you are new to cyber security and much easier when you are not. 

@@ -20,6 +20,10 @@ the conent is absolutely amazing, it is self paced; however, you have to compele
 
 This cert competes with offsec and imo it beats it out completely. It is updated daily so you aren't stuck with a 2021 exam and course and waiting for a pdf update. the course work is generally much more challenging and requires a lot more thought. you really change your mentality to "whats that CVE?" to "can i find a CVE?". this change in mentality is crucial to increasing your skill as a hacker.  
 
+## the exam
+
+10 day exam, with an idk how long report writing period. again very nice environment, with the goal of admin on most of the machines. it is honestly a very fun lab, so far the most challenging exam ive done. 
+
 ## who should get the cpts
 
 anyone that wants to really really get good at pentesting should take this course. someone whos been aroudn the block will still struggle. as an oscp holder i was still having trouble, even when finishing the exam in half the time alotted, it still felt at times like i won't pass the exam. 
