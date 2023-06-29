@@ -8,6 +8,7 @@ title: Certifications
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
+- [Certified Red Team Professional](#certified-red-team-professional) - CRTP
 - [Practical Network Penetration Tester](#practical-network-penetration-tester) - PNPT
 - [Practical Junior Penetration Tester](#practical-junior-penetration-tester) - PJPT
 - [CompTIA Security Plus](#comptia-security-plus)
@@ -20,6 +21,7 @@ title: Certifications
 - Date acquired: April 2022 
 - Exprires: Never
 - Verify: [OSCP](https://www.credential.net/aaf2c998-78c4-4714-add1-7185a3602a91)
+https://www.credential.net/55133e9c-8420-4474-aabe-0385f9612c2a
 
 ![](assets/images/oscp.png)
 
@@ -50,6 +52,15 @@ title: Certifications
 - Verify: [CBBH](https://www.credly.com/badges/cd99db08-80f8-4309-9aa2-5ab54edd47a0/public_url)
 
 ![](assets/images/CBBH.png)
+
+## Certified Red Team Professional 
+
+### Vendor: Altered Security 
+- Date acquired: June 2023
+- Exprires: June 2026
+- Verify: [CRTP](https://www.credential.net/55133e9c-8420-4474-aabe-0385f9612c2a)
+
+![](assets/images/CRTP.png)
 
 ## Practical Network Penetration Tester
 
