@@ -5,7 +5,7 @@ category: blog
 
 ## OSCP Review And Guide (2021)
 
-after a few years since i got the oscp in 2021 and getting a ton of other certs, i decided to start writing reviews and personal guides to how others can
+after a few years since i got the oscp in 2021 and a ton of other certs, i decided to start writing reviews and personal guides to how others can
 succeed. 
 
 ## what is the oscp
@@ -20,7 +20,7 @@ the lab is a very intricate environment with multiple tiers of networks. it's ve
 
 ## try harder 
 
-as i said there is nearly no guidance in the lab and they recommend rooting 40-60 machines in order to be more ready to pass the exam. i personally LOVE the try harder mentality. as this was my first cert, it shaped the way i approach all of cyber security. there is no challenge that i see now and think "i can't do this." every challenge is approached with "i can do this, just need to try hard enough." this is a very good mentality that i see a lot of people struggle with understanding or just outright disagree with. for me personally, this is my life.
+as i said there is nearly no guidance in the lab and they recommend rooting 40-60 machines in order to be more ready to pass the exam. i personally LOVE the try harder mentality. as this was my first cert, it shaped the way i approach all of cyber security. there is no challenge that i see now and think "i can't do this." every challenge is approached with an "i can do this, just need to try hard enough" mentality. this is a very good mentality that i see a lot of people struggle with understanding or just outright disagree with. for me personally, this is my life.
 
 ## who should get the oscp
 
