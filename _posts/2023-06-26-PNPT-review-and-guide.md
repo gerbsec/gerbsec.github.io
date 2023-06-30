@@ -32,7 +32,7 @@ i don't want to say anything about the exam, because i like my cert and i dont w
 
 ## who should get the pnpt
 
-honstly i can only recommend this to the absolute beginners, that are too intimidated by hackthebox. otherwise, don't take it. 
+honestly i can only recommend this to the absolute beginners, that are too intimidated by hackthebox. otherwise, don't take it. 
 
 ## how to prep
 
