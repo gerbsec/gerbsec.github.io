@@ -25,7 +25,7 @@ category: cheatsheets
 2. argue
 3. Command line exclusions - `Process Creastions from PSExec & Wmi`
 
-EDR Evasion:
+## EDR Evasion:
 1. `Process Mitigation Policy` - blockdlls
 2. list_process_callbacks 
 3. zero_process_callback 
