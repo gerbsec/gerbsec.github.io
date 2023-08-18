@@ -10,7 +10,7 @@ category: cheatsheets
 3. SPawnTo to Notepad
 4. Smb PIPE NAMES
 5. Amsi Disable CRTO
-6. sleep_mask CRTO
+6. sleep_mask
 
 ## Kits: 
 1. `Process Inject Kit`
