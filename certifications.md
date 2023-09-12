@@ -21,7 +21,6 @@ title: Certifications
 - Date acquired: April 2022 
 - Exprires: Never
 - Verify: [OSCP](https://www.credential.net/aaf2c998-78c4-4714-add1-7185a3602a91)
-https://www.credential.net/55133e9c-8420-4474-aabe-0385f9612c2a
 
 ![](assets/images/oscp.png)
 
