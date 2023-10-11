@@ -24,6 +24,15 @@ title: Certifications
 
 ![](assets/images/oscp.png)
 
+## Red Team Lead
+
+### Vendor: Zero-Point Security 
+- Date acquired: May 2023
+- Expries: Never
+- Verify: [CRTL](https://eu.badgr.com/backpack/badges/6525f46aa564053f4fe92c3e)
+
+![](assets/images/CRTL.png)
+
 ## Certified Red Team Operator
 
 ### Vendor: Zero-Point Security 
@@ -41,7 +50,6 @@ title: Certifications
 - Verify: [CPTS](https://www.credly.com/badges/fc1dae51-8b79-4c60-9f85-24dc992a7230)
 
 ![](assets/images/CPTS.png)
-
 
 ## Hack The Box Certified Bug Bounty Hunter
 
