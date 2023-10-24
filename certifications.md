@@ -5,6 +5,7 @@ title: Certifications
 
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
+- [Red Team Lead](#certified-red-team-lead) - RTL
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
@@ -29,7 +30,7 @@ title: Certifications
 ### Vendor: Zero-Point Security 
 - Date acquired: May 2023
 - Expries: Never
-- Verify: [CRTL](https://eu.badgr.com/backpack/badges/6525f46aa564053f4fe92c3e)
+- Verify: [CRTL](https://api.eu.badgr.io/public/assertions/a4EMav_CSaWQ5yhANMUqew)
 
 ![](assets/images/CRTL.png)
 
