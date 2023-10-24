@@ -5,7 +5,7 @@ title: Certifications
 
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
-- [Red Team Lead](#certified-red-team-lead) - RTL
+- [Red Team Lead](#red-team-lead) - RTL
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
