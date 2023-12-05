@@ -9,6 +9,7 @@ title: Certifications
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
 - [Hack The Box Certified Bug Bounty Hunter](#hack-the-box-certified-bug-bounty-hunter) - CBBH
+- [Hack The Box Certified Defensive Security Analyst](#hack-the-box-certified-defensive-security-analayst) - CDSA
 - [Certified Red Team Professional](#certified-red-team-professional) - CRTP
 - [Practical Network Penetration Tester](#practical-network-penetration-tester) - PNPT
 - [Practical Junior Penetration Tester](#practical-junior-penetration-tester) - PJPT
@@ -28,7 +29,7 @@ title: Certifications
 ## Red Team Lead
 
 ### Vendor: Zero-Point Security 
-- Date acquired: May 2023
+- Date acquired: October 2023
 - Expries: Never
 - Verify: [CRTL](https://api.eu.badgr.io/public/assertions/a4EMav_CSaWQ5yhANMUqew)
 
@@ -60,6 +61,15 @@ title: Certifications
 - Verify: [CBBH](https://www.credly.com/badges/cd99db08-80f8-4309-9aa2-5ab54edd47a0/public_url)
 
 ![](assets/images/CBBH.png)
+
+## Hack The Box Certified Defensive Security Analayst
+
+### Vendor: Hack The Box
+- Date acquired: December 2023
+- Exprires: Never
+- Verify: [CDSA](https://www.credly.com/badges/8199f750-ceca-4900-9cc8-c3b67b6525fd/public_url)
+
+![](assets/images/CDSA.png)
 
 ## Certified Red Team Professional 
 
