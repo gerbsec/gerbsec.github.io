@@ -11,6 +11,10 @@ category: writeup
 
 ## Initial Access
 
+Nmap:
+```bash
+```
+
 ## Privilege Escalation
 
 ## Beyond Root
