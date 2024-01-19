@@ -78,6 +78,7 @@ At this point I'll look through the easiest ports to enumerate first before gett
 
 Checking this port I can see elastix is running, doing a quick serachsploit yeilds with some vulnerabilities:
 
+
 ![[assets/images/Pasted image 20240118150625.png]]
 
 ![[assets/images/Pasted image 20240118150635.png]]
