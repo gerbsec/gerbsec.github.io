@@ -59,24 +59,24 @@ Looking for exploits on the different services I find that 2.3.4 ftp is vulnerab
 
 Attempting to exploit it led nowhere as it seemed like some sort of patch was applied:
 
-![[assets/images/2024-01-18-lame-writerup-image-1.png]]
-![[assets/images/2024-01-18-lame-writerup-image-2.png]]
+![assets/images/2024-01-18-lame-writerup-image-1.png](assets/images/2024-01-18-lame-writerup-image-1.png)
+![assets/images/2024-01-18-lame-writerup-image-2.png](assets/images/2024-01-18-lame-writerup-image-2.png)
 
 Looking at vulnerablities for samba:
-![[assets/images/2024-01-18-lame-writerup-image-3.png]]
+![assets/images/2024-01-18-lame-writerup-image-3.png](assets/images/2024-01-18-lame-writerup-image-3.png)
 I find this exploit on Metasploit.
 
 Running it lends us root:
-![[assets/images/2024-01-18-lame-writerup-image-4.png]]
+![assets/images/2024-01-18-lame-writerup-image-4.png](assets/images/2024-01-18-lame-writerup-image-4.png)
 ## Beyond Root
 
 In this section I like to look at why certain things might have not worked plus things I could do to harden these machines. This should be a simple update of samba however, I wanted to see why I wasn't able to exploit VSFTPD. 
 
 Looking at netstat on the machine I see a ton of ports open, one of which was 6200:
-![[assets/images/2024-01-18-lame-writerup-image-5.png]]
+![assets/images/2024-01-18-lame-writerup-image-5.png](assets/images/2024-01-18-lame-writerup-image-5.png)
 
 this means that comparing it to my nmap scan, the firewall is running and blocking almost everything. From there what we can do is attempt to connect locally to confirm this:
-![[assets/images/2024-01-18-lame-writerup-image-6.png]]
+![assets/images/2024-01-18-lame-writerup-image-6.png](assets/images/2024-01-18-lame-writerup-image-6.png)
 violla, it was just firewall, its always firewall...
 
 

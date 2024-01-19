@@ -4,7 +4,7 @@ category: writeup
 ---
 
 
-![](assets/images/BSIDESSTPETE23.jpg)
+![assets/images/2023-09-17-pelican-ctf-2023-writeup-image-1.jpg](assets/images/2023-09-17-pelican-ctf-2023-writeup-image-1.jpg)
 
 - BSides ST. Pete was a blast, lot's of different companies and i'm sure tons of great talks, but i was busy competing!
 - the CTF was very interesting as it involved many different topics.  
@@ -13,7 +13,7 @@ category: writeup
 
 - we placed first in the ctf finishing with 3666 points!
 
-![](assets/images/BSIDESSTPETE23_SCOREBOARD.jpg)
+![](assets/images/2023-09-17-pelican-ctf-2023-writeup-image-2.jpg)
 
 ## challenge writeups
 
@@ -146,12 +146,12 @@ The Pelicans are hosting an online gambling platform, can you cash out?
 
 - this challenge involved a slot machine and the win condition is to get 5 white flags
 
-![](assets/images/BSIDESSTPETE23-Vegasmainpage.jpg.png)
+![](assets/images/2023-09-17-pelican-ctf-2023-writeup-image-3.png)
 
 - first i role the flags until i hit a single (or more) white flags.
 - from there i capture the request and check for patterns
 
-![](assets/images/BSIDESSTPETE23-Vegas-white-flag.jpg.png)
+![](assets/images/2023-09-17-pelican-ctf-2023-writeup-image-4.png)
 
 - capture the request
 

@@ -53,13 +53,13 @@ bank.htb.               604800  IN      SOA     bank.htb. chris.bank.htb. 2 6048
 So we see that bank.htb is a valid domain, I'll go ahead and add it to my `/etc/hosts` file.
 
 Visiting the webpage IP:
-![[assets/images/2024-01-19-bank-writeup-image-1.png]]
+![assets/images/2024-01-19-bank-writeup-image-1.png](assets/images/2024-01-19-bank-writeup-image-1.png)
 Visiting the webpage via domain name:
-![[assets/images/2024-01-19-bank-writeup-image-2.png]]
+![assets/images/2024-01-19-bank-writeup-image-2.png](assets/images/2024-01-19-bank-writeup-image-2.png)
 
 So from here I can try some basic SQLi but it gets me nowhere, so I'll start a dirsearch and I found balance-transfer:
 
-![[assets/images/2024-01-19-bank-writeup-image-3.png]]
+![assets/images/2024-01-19-bank-writeup-image-3.png](assets/images/2024-01-19-bank-writeup-image-3.png)
 
 Looking into one of the files I can see that they are encrypted, so my thought process is to find a file that may be different. To do this quickly I'll wget everything into a directory and start looking for files that are smaller than the smallest one I can see right now which is about 581.
 
@@ -98,27 +98,27 @@ No luck!
 
 So I'll login to the application and I find a support page, looks like a file upload, lets see if its a vulnerability:
 
-![[assets/images/2024-01-19-bank-writeup-image-4.png]]
+![assets/images/2024-01-19-bank-writeup-image-4.png](assets/images/2024-01-19-bank-writeup-image-4.png)
 
 ![[assets/images/2024-01-19-bank-writeup-image-5.png]]
 
 I attempt different combinations of file bypasses but nothing works. Next I try to look at the source code of the page:
 
-![[assets/images/2024-01-19-bank-writeup-image-6.png]]
+![assets/images/2024-01-19-bank-writeup-image-6.png](assets/images/2024-01-19-bank-writeup-image-6.png)
 
 So I'll upload with htb extension, and from my dirsearch earlier I know that we have uploads directory:
 
-![[assets/images/2024-01-19-bank-writeup-image-7.png]]
+![assets/images/2024-01-19-bank-writeup-image-7.png](assets/images/2024-01-19-bank-writeup-image-7.png)
 
-![[assets/images/2024-01-19-bank-writeup-image-8.png]]
+![assets/images/2024-01-19-bank-writeup-image-8.png](assets/images/2024-01-19-bank-writeup-image-8.png)
 ## Privilege Escalation
 
 From here I'll do my basic enumeration and I find this weird emergency suid binary:
-![[assets/images/2024-01-19-bank-writeup-image-9.png]]
+![assets/images/2024-01-19-bank-writeup-image-9.png](assets/images/2024-01-19-bank-writeup-image-9.png)
 
 Running it gives me root...
 
-![[assets/images/2024-01-19-bank-writeup-image-10.png]]
+![assets/images/2024-01-19-bank-writeup-image-10.png](assets/images/2024-01-19-bank-writeup-image-10.png)
 ## Beyond Root
 
 There are a few things to fix, I need to remove the unencrypted creds. The upload page was secure, and coulda remained secure but obscurity if there wasn't a hint in the source code. What we can do is patch the htb extention and remove the hint from source. Next we should get rid of this emergency binary...
@@ -127,7 +127,7 @@ There are a few things to fix, I need to remove the unencrypted creds. The uploa
 
 Checking php5.conf I can see that it has a files match on htb extension to execute php:
 
-![[assets/images/2024-01-19-bank-writeup-image-11.png]]
+![assets/images/2024-01-19-bank-writeup-image-11.png](assets/images/2024-01-19-bank-writeup-image-11.png)
 
 I just have to go ahead and remove those 3 lines.
 

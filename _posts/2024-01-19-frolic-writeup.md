@@ -86,7 +86,7 @@ Reconnecting with SMB1 for workgroup listing.
 I can try to dig deeper but there isn't much there. 
 
 ### Node-Red
-![[assets/images/2024-01-19-frolic-writeup-image-1.png]]
+![assets/images/2024-01-19-frolic-writeup-image-1.png](assets/images/2024-01-19-frolic-writeup-image-1.png)
 Needs creds, might just dirsearch
 
 ### Nginx
@@ -123,23 +123,23 @@ Target: http://10.10.10.111:9999/
 ```
 
 I visit admin:
-![[assets/images/2024-01-19-frolic-writeup-image-2.png]]
+![assets/images/2024-01-19-frolic-writeup-image-2.png](assets/images/2024-01-19-frolic-writeup-image-2.png)
 
 I check source and find JS file:
 
-![[assets/images/2024-01-19-frolic-writeup-image-3.png]]
+![assets/images/2024-01-19-frolic-writeup-image-3.png](assets/images/2024-01-19-frolic-writeup-image-3.png)
 
 Find this weird page on success:
 
-![[assets/images/2024-01-19-frolic-writeup-image-4.png]]
+![assets/images/2024-01-19-frolic-writeup-image-4.png](assets/images/2024-01-19-frolic-writeup-image-4.png)
 
 Finally CTFing has helped, I find the cipher identifier on dcode.fr/en:
-![[assets/images/2024-01-19-frolic-writeup-image-5.png]]
+![assets/images/2024-01-19-frolic-writeup-image-5.png](assets/images/2024-01-19-frolic-writeup-image-5.png)
 
-![[assets/images/2024-01-19-frolic-writeup-image-6.png]]
+![assets/images/2024-01-19-frolic-writeup-image-6.png](assets/images/2024-01-19-frolic-writeup-image-6.png)
 
-![[assets/images/2024-01-19-frolic-writeup-image-7.png]]
-![[assets/images/2024-01-19-frolic-writeup-image-8.png]]
+![assets/images/2024-01-19-frolic-writeup-image-7.png](assets/images/2024-01-19-frolic-writeup-image-7.png)
+![assets/images/2024-01-19-frolic-writeup-image-8.png](assets/images/2024-01-19-frolic-writeup-image-8.png)
 
 We get a zip file spit out so I'll unzip it
 
@@ -153,16 +153,16 @@ ver 2.0 efh 5455 efh 7875 download.zip/index.php PKZIP Encr: TS_chk, cmplen=176,
 
 it needs a password, so I'll attempt to crack it with zip2john while I try easier creds:
 
-![[assets/images/2024-01-19-frolic-writeup-image-9.png]]
+![assets/images/2024-01-19-frolic-writeup-image-9.png](assets/images/2024-01-19-frolic-writeup-image-9.png)
 
 That was simple
-![[assets/images/2024-01-19-frolic-writeup-image-10.png]]
+![assets/images/2024-01-19-frolic-writeup-image-10.png](assets/images/2024-01-19-frolic-writeup-image-10.png)
 surely this will end soon...
-![[assets/images/2024-01-19-frolic-writeup-image-11.png]]
+![assets/images/2024-01-19-frolic-writeup-image-11.png](assets/images/2024-01-19-frolic-writeup-image-11.png)
 
 if this ends up being a rabbit hole...
 
-![[assets/images/2024-01-19-frolic-writeup-image-12.png]]
+![assets/images/2024-01-19-frolic-writeup-image-12.png](assets/images/2024-01-19-frolic-writeup-image-12.png)
 
 well that gave us something, lets see what we can do with it...
 
@@ -188,11 +188,11 @@ Target: http://10.10.10.111:9999/dev/
 ```
 
 I find backup:
-![[assets/images/2024-01-19-frolic-writeup-image-13.png]]
+![assets/images/2024-01-19-frolic-writeup-image-13.png](assets/images/2024-01-19-frolic-writeup-image-13.png)
 
 I login with admin:idkwhatispass
 
-![[assets/images/2024-01-19-frolic-writeup-image-14.png]]
+![assets/images/2024-01-19-frolic-writeup-image-14.png](assets/images/2024-01-19-frolic-writeup-image-14.png)
 
 I wasn't able to enumerate much of the version so I sprayed it with a couple of exploits and found an auth RCE to work on version 1.4. This isn't what I'd normally do but I got annoyed and didn't wanna put more effort than I needed to https://github.com/jasperla/CVE-2017-9101:
 
@@ -225,7 +225,7 @@ Segmentation fault (core dumped)
 This has got to be the most CTF-y box ever... ugh, I guess we're doing a rop chain.. 
 
 vuln func takes 48 bytes:
-![[assets/images/2024-01-19-frolic-writeup-image-16.png]]
+![assets/images/2024-01-19-frolic-writeup-image-16.png](assets/images/2024-01-19-frolic-writeup-image-16.png)
 So we need a bit more than that
 
 52 to be exact. From there I will look for system exit and /bin/bash in the libc binary and call them in that order after sending 52 bytes:
