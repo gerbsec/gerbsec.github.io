@@ -28,7 +28,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 From this info I can try to visit the page:
 
-![assets/images/Pasted image 20240119092618.png]
+![[assets/images/2024-01-19-shocker-writeup-image-1.png]]
 
 Nothing too crazy stands out, I can try to check for dirsearch while I enumerate this apache version:
 ```bash

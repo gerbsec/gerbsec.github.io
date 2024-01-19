@@ -79,9 +79,9 @@ At this point I'll look through the easiest ports to enumerate first before gett
 Checking this port I can see elastix is running, doing a quick serachsploit yeilds with some vulnerabilities:
 
 
-![[assets/images/Pasted image 20240118150625.png]]
+![[assets/images/2024-01-18-Beep-Writeup.md-image-1.png]]
 
-![[assets/images/Pasted image 20240118150635.png]]
+![[assets/images/2024-01-18-Beep-Writeup.md-image-2.png]]
 
 I found this python script:
 
@@ -108,7 +108,7 @@ urllib2.urlopen(url,context=ctx)
 
 running it yields a reverse shell:
 
-![[assets/images/Pasted image 20240118154029.png]]
+![[assets/images/2024-01-18-Beep-Writeup.md-image-3.png]]
 ## Privilege Escalation
 
 For privilege escalation I can do the normal recon, I started with sudo privileges:

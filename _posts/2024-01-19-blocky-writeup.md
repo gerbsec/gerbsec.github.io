@@ -95,21 +95,21 @@ Then I will wpscan while these are running:
 Nothing really stood out besides the username notch.
 
 Visiting the wiki endpoint I se its under construction:
-![[assets/images/Pasted image 20240119085156.png]]
+![[assets/images/2024-01-19-blocky-writeup-image-1.png]]
 
 I'll start a dirsearch in there, I'll also visit the plugins directory:
 
-![[assets/images/Pasted image 20240119085536.png]]
+![[assets/images/2024-01-19-blocky-writeup-image-2.png]]
 
 I see some files that seem interesting let me download them and analyze them.
 
 I start by unzipping the file then decompiling the class
 
-![[assets/images/Pasted image 20240119085739.png]]
+![[assets/images/2024-01-19-blocky-writeup-image-3.png]]
 
 I see some credentials, let me see if they work on wordpress. 
 
-![[assets/images/Pasted image 20240119085806.png]]
+![[assets/images/2024-01-19-blocky-writeup-image-4.png]]
 
 Nope, so now I will try to ssh in:
 

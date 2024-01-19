@@ -15,3 +15,6 @@ Gemfile.lock
 .obsidian/plugins/oz-clear-unused-images/main.js
 .obsidian/plugins/oz-clear-unused-images/manifest.json
 .obsidian/plugins/oz-clear-unused-images/styles.css
+.obsidian/plugins/obsidian-attachment-name-formatting/manifest.json
+.obsidian/plugins/obsidian-attachment-name-formatting/data.json
+.obsidian/plugins/obsidian-attachment-name-formatting/main.js

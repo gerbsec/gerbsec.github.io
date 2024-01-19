@@ -86,11 +86,12 @@ Reconnecting with SMB1 for workgroup listing.
 I can try to dig deeper but there isn't much there. 
 
 ### Node-Red
-![](assets/images/Pasted image 20240119094122.png)
+![[assets/images/2024-01-19-frolic-writeup-image-1.png]]
 Needs creds, might just dirsearch
 
 ### Nginx
-![[assets/images/Pasted image 20240119094146.png]]
+
+
 I see a reference to the domain name, I'll add that to my `/etc/hosts`
 
 Let's dirsearch:
@@ -122,23 +123,23 @@ Target: http://10.10.10.111:9999/
 ```
 
 I visit admin:
-![[assets/images/Pasted image 20240119094641.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-2.png]]
 
 I check source and find JS file:
 
-![[assets/images/Pasted image 20240119094653.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-3.png]]
 
 Find this weird page on success:
 
-![[assets/images/Pasted image 20240119094709.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-4.png]]
 
 Finally CTFing has helped, I find the cipher identifier on dcode.fr/en:
-![[assets/images/Pasted image 20240119094734.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-5.png]]
 
-![[assets/images/Pasted image 20240119094743.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-6.png]]
 
-![[assets/images/Pasted image 20240119094800.png]]
-![[assets/images/Pasted image 20240119094914.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-7.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-8.png]]
 
 We get a zip file spit out so I'll unzip it
 
@@ -152,16 +153,16 @@ ver 2.0 efh 5455 efh 7875 download.zip/index.php PKZIP Encr: TS_chk, cmplen=176,
 
 it needs a password, so I'll attempt to crack it with zip2john while I try easier creds:
 
-![[assets/images/Pasted image 20240119095101.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-9.png]]
 
 That was simple
-![[assets/images/Pasted image 20240119095137.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-10.png]]
 surely this will end soon...
-![[assets/images/Pasted image 20240119095249.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-11.png]]
 
 if this ends up being a rabbit hole...
 
-![[assets/images/Pasted image 20240119095319.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-12.png]]
 
 well that gave us something, lets see what we can do with it...
 
@@ -187,11 +188,11 @@ Target: http://10.10.10.111:9999/dev/
 ```
 
 I find backup:
-![[assets/images/Pasted image 20240119095704.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-13.png]]
 
 I login with admin:idkwhatispass
 
-![[assets/images/Pasted image 20240119095731.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-14.png]]
 
 I wasn't able to enumerate much of the version so I sprayed it with a couple of exploits and found an auth RCE to work on version 1.4. This isn't what I'd normally do but I got annoyed and didn't wanna put more effort than I needed to https://github.com/jasperla/CVE-2017-9101:
 
@@ -210,7 +211,7 @@ www-data
 
 Alright you know the drill, regular enum, I look for suid binaries to start:
 
-![[assets/images/Pasted image 20240119101250.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-15.png]]
 
 I find this weird rop file in ayush's directory so lets go look there:
 
@@ -224,7 +225,7 @@ Segmentation fault (core dumped)
 This has got to be the most CTF-y box ever... ugh, I guess we're doing a rop chain.. 
 
 vuln func takes 48 bytes:
-![[assets/images/Pasted image 20240119102041.png]]
+![[assets/images/2024-01-19-frolic-writeup-image-16.png]]
 So we need a bit more than that
 
 52 to be exact. From there I will look for system exit and /bin/bash in the libc binary and call them in that order after sending 52 bytes:
@@ -248,3 +249,5 @@ root
 
 
 ## Beyond Root
+
+This was annoying box, I will not entertain the beyond root.
