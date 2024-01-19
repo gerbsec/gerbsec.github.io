@@ -89,3 +89,6 @@ Very simple root!
 Now since I can't update the machine, what I'll do is get rid of the vulnerable script user.sh
 
 As far as root goes, I'll get rid of the sudo perl usage
+
+best,
+gerbsec
