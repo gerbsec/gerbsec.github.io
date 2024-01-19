@@ -86,7 +86,7 @@ Reconnecting with SMB1 for workgroup listing.
 I can try to dig deeper but there isn't much there. 
 
 ### Node-Red
-![[assets/images/Pasted image 20240119094122.png]]
+![](assets/images/Pasted image 20240119094122.png)
 Needs creds, might just dirsearch
 
 ### Nginx
