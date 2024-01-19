@@ -1,9 +1,9 @@
 
 ## Machine Info
 
-- Name: 
-- Description: 
-- Difficulty:
+- Name: Bank
+- Description:  Bank is a relatively simple machine, however proper web enumeration is key to finding the necessary data for entry. There also exists an unintended entry method, which many users find before the correct data is located.
+- Difficulty: Easy
 
 ## Initial Access
 
