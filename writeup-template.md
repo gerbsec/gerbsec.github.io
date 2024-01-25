@@ -7,7 +7,7 @@ category: writeup
 
 - Name: 
 - Description: 
-- Difficulty:
+- Difficulty: 
 
 ## Initial Access
 
