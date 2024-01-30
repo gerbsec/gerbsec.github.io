@@ -5,9 +5,9 @@
 
   <title>
     {%- if page.title -%}
-      {{ page.title | downcase }}
+      {{ page.title | uppercase }}
     {%- else -%}
-      {{ site.title | downcase }}
+      {{ site.title | uppercase }}
     {%- endif -%}
   </title>
 
