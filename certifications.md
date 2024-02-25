@@ -5,6 +5,7 @@ title: Certifications
 
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
+- [Offensive Security Web Assessor](#offensive-security-web-assessor) - OSWA
 - [Red Team Lead](#red-team-lead) - RTL
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
@@ -25,6 +26,15 @@ title: Certifications
 - Verify: [OSCP](https://www.credential.net/aaf2c998-78c4-4714-add1-7185a3602a91)
 
 ![](assets/images/oscp.png)
+
+## Offensive Security Web Assessor
+
+### Vendor: Offensive Security 
+- Date acquired: April 2022 
+- Exprires: Never
+- Verify: [OSWA](https://www.credential.net/19e60313-d540-407e-9ab2-4d400ab1d516)
+
+![](assets/images/oswa.png)
 
 ## Red Team Lead
 
