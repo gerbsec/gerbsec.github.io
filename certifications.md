@@ -6,6 +6,7 @@ title: Certifications
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Offensive Security Web Assessor](#offensive-security-web-assessor) - OSWA
+- [Kali Linux Certified Professional](#kali-linux-certified-professional) - KLCP
 - [Red Team Lead](#red-team-lead) - RTL
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
 - [Hack The Box Certified Penetration Testing Specialist](#hack-the-box-certified-penetration-testing-specialist) - CPTS
@@ -30,11 +31,20 @@ title: Certifications
 ## Offensive Security Web Assessor
 
 ### Vendor: Offensive Security 
-- Date acquired: April 2022 
+- Date acquired: February 2024
 - Exprires: Never
 - Verify: [OSWA](https://www.credential.net/19e60313-d540-407e-9ab2-4d400ab1d516)
 
 ![](assets/images/oswa.png)
+
+## Kali Linux Certified Professional
+
+### Vendor: Offensive Security 
+- Date acquired: April 2022 
+- Exprires: Never
+- Verify: [KLCP](https://www.credential.net/1857913a-1503-4522-aea7-acb1b322f286)
+
+![](assets/images/klcp.png)
 
 ## Red Team Lead
 
