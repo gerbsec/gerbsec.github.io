@@ -6,6 +6,7 @@ title: Certifications
 ### Table of Contents
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Offensive Security Web Assessor](#offensive-security-web-assessor) - OSWA
+- [Offensive Security Wireless Professional](#offensive-security-wireless-professional) - OSWP
 - [Kali Linux Certified Professional](#kali-linux-certified-professional) - KLCP
 - [Red Team Lead](#red-team-lead) - RTL
 - [Certified Red Team Operator](#certified-red-team-operator) - CRTO 
@@ -37,10 +38,19 @@ title: Certifications
 
 ![](assets/images/oswa.png)
 
+## Offensive Security Wireless Professional
+
+### Vendor: Offensive Security 
+- Date acquired: March 2024
+- Exprires: Never
+- Verify: [OSWP](https://www.credential.net/ffee954b-6fbc-4acd-9611-25d983622051)
+
+![](assets/images/oswp.png)
+
 ## Kali Linux Certified Professional
 
 ### Vendor: Offensive Security 
-- Date acquired: April 2022 
+- Date acquired: February 2024 
 - Exprires: Never
 - Verify: [KLCP](https://www.credential.net/1857913a-1503-4522-aea7-acb1b322f286)
 
