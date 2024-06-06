@@ -4,6 +4,7 @@ title: Certifications
 ---
 
 ### Table of Contents
+- [Offensive Security Experienced Penetration Tester](#offensive-security-experienced-penetration-tester) - OSEP
 - [Offensive Security Certified Professional](#offensive-security-certified-professional) - OSCP
 - [Offensive Security Web Assessor](#offensive-security-web-assessor) - OSWA
 - [Offensive Security Wireless Professional](#offensive-security-wireless-professional) - OSWP
@@ -19,6 +20,15 @@ title: Certifications
 - [CompTIA Security Plus](#comptia-security-plus)
 - [Hack The Box Genesis Pro Lab](#hack-the-box-genesis-pro-lab)
 - [Hack The Box Dante Pro Lab](#hack-the-box-dante-pro-lab)
+
+## Offensive Security Experienced Penetration Tester
+
+### Vendor: Offensive Security 
+- Date acquired: June 2024
+- Exprires: Never
+- Verify: [OSEP](https://www.credential.net/162127db-4ef3-4fb7-814d-d71aa874eb66)
+
+![](assets/images/OSEP.png)
 
 ## Offensive Security Certified Professional
 
