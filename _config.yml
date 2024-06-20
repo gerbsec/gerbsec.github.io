@@ -41,8 +41,6 @@ theme_config:
     title_writeups: Writeups
     title_old_projects: Old Projects
 
-soopr:
-  publish_token: "" # sign up at https://www.soopr.co to get your publish token and personalize share and reaction options
 
 highlighter: rouge
 
@@ -51,4 +49,4 @@ sass:
 
 plugins:
   - jekyll-feed
-  - jekyll-soopr-seo-tag
+  - jekyll-seo-tag
