@@ -54,6 +54,9 @@ footer_entries:
   - title: github
     url: https://github.com/gerbsec
 
+  - title: linkedin
+    url: https://www.linkedin.com/in/gerbsec/
+
 misc_entries:
   - title: this is an example vertical list
     url: false
