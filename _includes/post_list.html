@@ -18,7 +18,7 @@
           {% if site.theme_config.lowercase_titles == true %}
           <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
           {% else %}
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
           {% endif %}
         </li>
     {%- endfor -%}
