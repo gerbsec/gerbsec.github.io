@@ -1,0 +1,78 @@
+navbar_entries:
+  - title: about
+    url: about
+
+  - title: blog
+    url: blog
+
+  - title: writeups
+    url: writeups
+
+  - title: website
+    url: https://gerbsec.com
+
+project_entries:
+  - title: G2
+    url: https://github.com/gerbsec/G2
+    desc: Command and Control Framework Written in Golang
+
+  - title: RedTeam-TradeCraft
+    url: https://github.com/gerbsec/RedTeam-TradeCraft
+    desc: Red Team Tools and Notes
+
+  - title: 
+    url: overview-post
+    desc: You can control visibility from _config.yml file
+
+entries:
+  - title: blog
+    post_list:
+      limit: 5
+      category: blog
+
+  - title: writeups
+    post_list:
+      limit: 5
+      category: writeup
+
+old_project_entries:
+  - title: Soopr
+    url: https://www.soopr.co
+    desc: Delight your readers - add beautiful share and like buttons easily to your websites 
+    highlight: NEW
+
+  - title: Cookie
+    url: https://github.com/abhinavs/cookie
+    desc: An open source landing website with supporting pages and integrated blog
+
+  - title: Moonwalk
+    url: https://github.com/abhinavs/moonwalk
+    desc: A fast and minimalist Jekyll blog theme with clean dark mode
+
+footer_entries:
+  - title: home
+    url: https://gerbsec.com
+
+  - title: twitter
+    url: https://twitter.com/gerbsec
+
+  - title: github
+    url: https://github.com/gerbsec
+
+  - title: feed
+    url: feed.xml
+
+misc_entries:
+  - title: this is an example vertical list
+    url: false
+
+  - title: you can show or hide using a boolean flag in _config.yml
+    url: false
+
+  - title: and you can add data in _data/home.yml
+    url: false
+
+  - title: Blog posts
+    post_list: true
+    url: false
+

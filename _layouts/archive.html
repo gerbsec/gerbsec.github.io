@@ -2,8 +2,10 @@
 layout: default
 ---
 
-{%-include back_link.html-%}
+<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>
 
-<h1>{{ page.title | downcase }}</h1>
+<header>
+    <h1>{{ site.title }}</h1>
+</header>
 
 {%-include post_list.html category=page.which_category-%}
