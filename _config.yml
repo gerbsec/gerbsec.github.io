@@ -33,6 +33,7 @@ theme_config:
   show_misc_list: false # show generic vertical list for misc details, add _data/home.yml
   show_reading_time: true # show number of words and reading time in the blog posts
   show_tags: true # show tags in a blog posts
+  lowercase_titles: true
   # options for "home" page
   home:
     title_projects: projects
