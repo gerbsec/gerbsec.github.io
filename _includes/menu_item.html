@@ -1,8 +1,8 @@
   {%-for item in include.collection-%}
     {%- if item.url -%}
-      <a href="{{ item.url }}">{{ item.title }}</a>
+      <a href="{{ item.url }}">{{ item.title | downcase }}</a>
     {%- else -%}
-      <h2>{{ item.title }}</h2>
+      <h2>{{ item.title | downcase }}</h2>
     {%- endif -%}
 
     {%-if item.post_list-%}
