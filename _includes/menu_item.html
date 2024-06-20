@@ -1,19 +1,19 @@
-  {%-for item in include.collection-%}
-    {%- if item.url -%}
-      <a href="{{ item.url }}">{{ item.title }}</a>
-    {%- else -%}
-      <h2>{{ item.title | downcase }}</h2>
-    {%- endif -%}
+{%- for item in include.collection -%}
+  {%- if item.url -%}
+    <a href="{{ item.url }}">{{ item.title | downcase }}</a>
+  {%- else -%}
+    <h2>{{ item.title | downcase }}</h2>
+  {%- endif -%}
 
-    {%-if item.post_list-%}
-      {%
-        include post_list.html
-          category=item.post_list.category
-          limit=item.post_list.limit
-      -%}
-    {%-endif-%}
+  {%- if item.post_list -%}
+    {%- include post_list.html 
+        category=item.post_list.category | downcase 
+        limit=item.post_list.limit 
+    -%}
+  {%- endif -%}
 
-    {%-if item.entries-%}
-      {%-include menu_item.html collection=item.entries | downcase -%}
-    {%-endif-%}
-  {%-endfor-%}
+  {%- if item.entries -%}
+    {%- assign lowercase_entries = item.entries | map: 'title', 'downcase' -%}
+    {%- include menu_item.html collection=lowercase_entries -%}
+  {%- endif -%}
+{%- endfor -%}
