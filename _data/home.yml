@@ -20,9 +20,9 @@ project_entries:
     url: https://github.com/gerbsec/RedTeam-TradeCraft
     desc: Red Team Tools and Notes
 
-  - title: 
-    url: overview-post
-    desc: You can control visibility from _config.yml file
+  - title: ProcHide
+    url: https://github.com/gerbsec/prochide
+    desc: Linux OPPSEC Tool
 
 entries:
   - title: blog
