@@ -1,0 +1,39 @@
+entries:
+  - title: $ whoami
+    entries:
+      - title: waseem albaba 
+        entries: 
+        - title: adversarial security engineer
+        - title: <a href='./certifications'>certifications</a>
+        - title: <a href='https://github.com/gerbsec'>github</a> && <a href='https://twitter.com/gerbsec'>twitter</a> && <a href='https://www.linkedin.com/in/gerbsec/'>linkedin</a>
+
+  - title: recent posts
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: See archive...
+      show_more_url: archive
+
+  - title: writeups
+    post_list:
+      limit: 0
+      category: writeup
+      show_more: true
+      show_more_text: view all writeups..
+      show_more_url: writeup-archive
+
+  - title: cheatsheets
+    post_list:
+      limit: 0
+      category: cheatsheets
+      show_more: true
+      show_more_text: view all cheat sheets..
+      show_more_url: cheatsheets-archive
+
+  - title: blogs
+    post_list:
+      limit: 0
+      category: blog
+      show_more: true
+      show_more_text: view all blogs..
+      show_more_url: blog-archive
