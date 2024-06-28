@@ -29,7 +29,7 @@ just as before, simply download and install the tool from [here](https://develop
 
 after both the tools are installed, run the following command:
 
-```ps
+```bash
 vagrant plugin install vagrant-vmware-desktop
 ```
 
@@ -85,7 +85,7 @@ you can do this config here:
 
  okay now i give you permission to run the command. 
 
-```ps
+```bash
 cd ad\GOAD\providers\vmware
 vagrant up
 ```
