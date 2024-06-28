@@ -29,7 +29,7 @@ just as before, simply download and install the tool from [here](https://develop
 
 after both the tools are installed, run the following command:
 
-```psh
+```ps
 vagrant plugin install vagrant-vmware-desktop
 ```
 
@@ -67,7 +67,7 @@ ok we're at the long stretch now and its time to put this all together. we'll st
 
 once you have the project locally, open an administrative powershell/cmd and run the following:
 
-**NOTE***: WE ARE INSTALLING "GOAD" if you want "GOAD-LITE" or else, be sure to cd into that directory!
+**NOTE**: WE ARE INSTALLING "GOAD" if you want "GOAD-LITE" or else, be sure to cd into that directory!
 
 ***ANOTHER NOTE***: be sure to check the IP addresses associated in your vagrant files for these machines. You need to make sure you know what the 3rd octet is or else..
 
@@ -85,7 +85,7 @@ you can do this config here:
 
  okay now i give you permission to run the command. 
 
-```psh
+```ps
 cd ad\GOAD\providers\vmware
 vagrant up
 ```
