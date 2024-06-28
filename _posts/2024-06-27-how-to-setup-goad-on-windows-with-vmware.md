@@ -29,7 +29,7 @@ just as before, simply download and install the tool from [here](https://develop
 
 after both the tools are installed, run the following command:
 
-```powershell
+```psh
 vagrant plugin install vagrant-vmware-desktop
 ```
 
@@ -61,7 +61,7 @@ the following command is out of the GOAD directory, so if you're copy and pastin
 ansible-galaxy install -r ansible/requirements.yml
 ```
 
-### putting together
+### putting it all together
 
 ok we're at the long stretch now and its time to put this all together. we'll start by downloading the repo on our windows host. we can do this a million ways (3) by downloading the zip file or git cloning the https/ssh versions of the repo. I'm sure someone will be creative and find other ways (or i didn't look hard enough) but this is BESIDES THE POINT!
 
@@ -75,9 +75,9 @@ example:
 
 ![](assets/images/2024-06-27-how-to-setup-goad-on-windows-with-vmware-image-1.png)
 
-when I open my vagrant file I see the above this will matter in just a second!
+when I open my vagrant file I see the above, this will matter in just a second!
 
-***FINAL NOTE***: IT IS IMPORTANT TO UNDERSTAND THAT THIS WILL REQUIRE AT LEAST 20GB RAM and 10 CPU cores. at its base its configure to give each VM 4GB ram and 2 cpu cores. i wouldn't touch the cpu but i have had good luck with 2gb of ram on each vm :)
+***FINAL NOTE***: IT IS IMPORTANT TO UNDERSTAND THAT THIS WILL REQUIRE AT LEAST 20GB RAM and 10 CPU cores. at its default state, its configured to give each VM 4GB ram and 2 cpu cores. i wouldn't touch the cpu but i have had good luck with 2gb of ram on each vm :)
 
 you can do this config here:
 
@@ -85,7 +85,7 @@ you can do this config here:
 
  okay now i give you permission to run the command. 
 
-```powershell
+```psh
 cd ad\GOAD\providers\vmware
 vagrant up
 ```
