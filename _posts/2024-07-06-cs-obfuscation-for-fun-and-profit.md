@@ -10,6 +10,8 @@ hey its me gerbsec, back again with more writing. as you're probably not aware, 
 
 the tool in question is my fork of [smokeyobfuscator](https://github.com/gerbsec/SmokeyObfuscator). which initially had a gui and some other functionality that i decided was not relevant to rt. the author seems to be a dev or something but his tool is great! 
 
+Original author credit: [TrentonH1ll](https://github.com/TrentonH1ll)
+
 ## what is c# obfuscation?
 
 c# obfuscation is the process of transforming your code to make it difficult to understand/detect. this is particularly useful for red teamers since our greatest enemy is static signatures right? right?
