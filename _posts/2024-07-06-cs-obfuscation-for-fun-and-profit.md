@@ -79,6 +79,9 @@ private void button2_Click(object sender, EventArgs e)
 ```
 
 here we simply open a directory for files, rotate through the files and execute our obfuscation techniques. at its current state its a a gui tool. in my next release i'll be pushing it out as a command line tool that takes a directory for an argument. 
+
+EDIT: I just pushed the above 7/7/2024.
+
 ## protections
 
 now, let's break down the different protections used in smokeyobfuscator.
