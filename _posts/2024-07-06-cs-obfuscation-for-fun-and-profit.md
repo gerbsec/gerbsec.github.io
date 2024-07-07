@@ -78,7 +78,7 @@ private void button2_Click(object sender, EventArgs e)
 }
 ```
 
-here we simply open a directory for files, rotate through the files and execute our obfuscation techniques. at its current state its a a gui tool. in my next release i'll be pushing out a a command line tool that takes a directory for an argument. 
+here we simply open a directory for files, rotate through the files and execute our obfuscation techniques. at its current state its a a gui tool. in my next release i'll be pushing it out as a command line tool that takes a directory for an argument. 
 ## protections
 
 now, let's break down the different protections used in smokeyobfuscator.
@@ -204,7 +204,7 @@ public static void Execute(ModuleDefMD module)
     - `OpCodes.Callvirt`: calls the `GetString` method of the `Encoding` class to convert the byte array to a string.
     - `OpCodes.Ret`: returns the decoded string.
 
-Now this actually works for now, but i have plans to aes encrypt instead with a randomly generated key and iv. this ensures that everytime this is generated we have a new hash and a new 
+Now this actually works for now, but i have plans to aes encrypt instead with a randomly generated key and iv. this ensures that everytime this is generated we'll have a new hash for the file and new strings etc.
 ## seeing it in action
 
 before obfuscation, our binary is easily detected by av:
