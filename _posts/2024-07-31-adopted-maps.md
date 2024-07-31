@@ -8,7 +8,7 @@ hey its gerbsec back again with more heat. i've gotten into maldev as part of my
 
 ### what is gerbload?
 
-gerbload is a shellcode loader i wrote that functions as a orphanage! essentially it'll pull your shellcode from a webserver, find a suitable parent for your orphan child process. match them up and inject your shellcode! this will spoof the current directory, the arguments, the parent and the process where our shellcode will reside! as of right now this bypasses defender (ok i get it, not a big deal). i have not tested against edr.
+[gerbload](https://github.com/gerbsec/MalDev/blob/main/README.md) is a shellcode loader i wrote that functions as a orphanage! essentially it'll pull your shellcode from a webserver, find a suitable parent for your orphan child process. match them up and inject your shellcode! this will spoof the current directory, the arguments, the parent and the process where our shellcode will reside! as of right now this bypasses defender (ok i get it, not a big deal). i have not tested against edr.
 
 ### lets walk through the code
 
